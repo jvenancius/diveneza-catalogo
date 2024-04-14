@@ -1,0 +1,16 @@
+.header {
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* height: 100vh; */
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background-color: #C6AFB5
+}
+
+
+.header img {
+	/* width: 50%; */
+	object-fit: contain;
+}

@@ -78,7 +78,7 @@ function App() {
 					preco: 1291,
 				},
 				{
-					marca: "Tiffany & Co. TF4215 8015T5",
+					marca: "Tiffany & Co.",
 					modelo: "TF4215 8015T5",
 					preco: 3317,
 					img: "TF4215_8015T5_1.png"

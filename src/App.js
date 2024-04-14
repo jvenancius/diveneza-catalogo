@@ -135,7 +135,7 @@ function App() {
 			frameColor: paleta.colorido,
 			cards: [
 				{
-					marca: "Carrera/S",
+					marca: "Carrera",
 					modelo: "CARDUCUC017/S",
 					preco: 1135
 				},

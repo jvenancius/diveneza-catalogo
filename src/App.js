@@ -8,7 +8,7 @@ import ScrolltoBtn from './components/Buttons/ScrollToBtn'
 
 function App() {
 	const paleta = {
-		colorido: "#E2C0BF",
+		colorido: "#EFC4B7",
 		branco: "#FFFFFF",
 		cinza: "#F4F4F4",
 		escrita: "#444040"
@@ -60,10 +60,16 @@ function App() {
 			titulo: "Mãe Clássica",
 			imagemCatergoria: "https://source.unsplash.com/random",
 			bgCategoria: "#F4F4F4",
-			cardStyle: cardsEstilos.comBordas,
-			btnBg: paleta.colorido,
+			// cardStyle: cardsEstilos.comBordas,
+			// btnBg: paleta.colorido,
+			// btnFg: paleta.escrita,
+			// frameColor: paleta.colorido,
+
+
+			cardStyle: cardsEstilos.semBordas,
+			btnBg: paleta.branco,
 			btnFg: paleta.escrita,
-			frameColor: paleta.colorido,
+			frameColor: paleta.branco,
 			cards: [
 				{
 					marca: "Carolina Herrera",
@@ -96,8 +102,8 @@ function App() {
 			imagemCatergoria: "https://source.unsplash.com/random",
 			bgCategoria: "#F4F4F4",
 			cardStyle: cardsEstilos.semBordas,
-			btnBg: paleta.escrita,
-			btnFg: paleta.branco,
+			btnFg: paleta.escrita,
+			btnBg: paleta.branco,
 			frameColor: paleta.branco,
 			cards: [
 				{
@@ -121,6 +127,7 @@ function App() {
 				{
 					marca: "FENDI",
 					modelo: "FE50065I 001",
+					img: "fe500651_001_1.png",
 					preco: 3657,
 				}
 			]
@@ -129,24 +136,34 @@ function App() {
 			titulo: "Mãe Esportiva",
 			imagemCatergoria: "https://source.unsplash.com/random",
 			bgCategoria: "#F4F4F4",
-			cardStyle: cardsEstilos.comBordas,
-			btnBg: paleta.colorido,
+			// cardStyle: cardsEstilos.comBordas,
+			// btnBg: paleta.colorido,
+			// btnFg: paleta.escrita,
+			// frameColor: paleta.colorido,
+
+
+			cardStyle: cardsEstilos.semBordas,
 			btnFg: paleta.escrita,
-			frameColor: paleta.colorido,
+			btnBg: paleta.branco,
+			frameColor: paleta.branco,
+
 			cards: [
 				{
 					marca: "Carrera",
 					modelo: "CARDUCUC017/S",
+					img: "CARDUC017S_OITUZ_1.png",
 					preco: 1135
 				},
 				{
 					marca: "Carrera",
 					modelo: "FLAGLAB 16KY21V",
+					img: "FLAGLAB16_KY21V_1.png",
 					preco: 1237
 				},
 				{
 					marca: "Carrera",
 					modelo: "1061/S10AHA59",
+					img: "1061S_10AHA_1.jpg",
 					preco: 1330
 				},
 				{

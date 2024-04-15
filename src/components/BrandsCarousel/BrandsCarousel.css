@@ -1,0 +1,11 @@
+
+.Carousel {
+	width: 700px;
+	margin: auto;
+}
+
+.carousel--item {
+    -webkit-transition: 0s !important;
+    -o-transition: 0s !important;
+    transition: 10s !important;
+}

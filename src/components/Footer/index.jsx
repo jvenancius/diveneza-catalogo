@@ -12,6 +12,7 @@ function Footer() {
 				<div className='contato'>
 					<h1>CONTATO</h1>
 					<p>Telefone: (35) 9825-4687</p>
+					<p>Telefone: (35) 3721 0400</p>
 				</div>
 				<div className='funcionamento'>
 					<h1>HORÁRIO DE FUNCIONAMENTO</h1>
@@ -22,8 +23,8 @@ function Footer() {
 			<div className='footing--note'>
 				<p>© 2024 Ótica Diveneza. Todos os direitos reservados.</p>
 				<div className="socials">
-					<i className="fa fa-facebook-f"></i>
-					<i className="fa fa-instagram"></i>
+					<a href="https://www.facebook.com/diveneza/"><i className="fa fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/divenezaotica/"><i className="fa fa-instagram"></i></a>
 				</div>
 			</div>
     </div>

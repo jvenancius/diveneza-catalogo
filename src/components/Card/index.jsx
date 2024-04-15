@@ -10,7 +10,7 @@ function Card(props) {
 	})
 	let precoFormatado = formater.format(props.preco/10)
   return (
-    <div className="card" style={props.cardStyle}>
+		<div className="card" style={{...props.cardStyle, borderRadius: "50px"}}>
 			<div className="card--image--div">
 				<img className="card--image--frame" src={"/assets/frame_" + props.frameColor.replace("#","") + ".png"} alt=""/>
 				<img className="card--image" src={"/assets/" + props.img} alt={props.marca + " " + props.modelo}/>

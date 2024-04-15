@@ -7,14 +7,14 @@ function CategoriesBanner(props) {
   }
   return (
     <div className="banner--categories">
-			<img src="../../otica_conceito/1.png" alt="errp"/>
 			<div className="categories">
 				{props.categories.map(categoryId => {
-					return (<div className="category--card" style={{backgroundImage: "url(" + categoryId.imageUrl + ")"}}>
+					return (<div className="category--card" style={{backgroundImage: "url(" + categoryId.imagemCatergoria + ")"}}>
 						<ScrollToBtn
 							name={categoryId.nome}
 							btnStyle={props.btnStyle}
 						/>
+						dsadasd
 					</div>
 					)
 				})}

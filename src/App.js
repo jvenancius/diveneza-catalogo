@@ -4,7 +4,8 @@ import Header from './components/Header'
 import Banner from './components/Banner'
 import Footer from './components/Footer'
 import ScrolltoBtn from './components/Buttons/ScrollToBtn'
-// import CategoriesBanner from './components/CategoriesBanner';
+import CategoriesBanner from './components/CategoriesBanner';
+import BrandsCarousel from './components/BrandsCarousel'
 
 function App() {
 	const paleta = {
@@ -213,6 +214,10 @@ function App() {
 			mensagem={"Conheça nosssos produtos."}
 			btnTexto="COMPRE AGORA"
 		/>
+		<CategoriesBanner 
+				categories={categoriesData}
+		/>
+		<BrandsCarousel/>
 		{categoriesData.map(e => (
 			<Category
 				bg={e.bg}

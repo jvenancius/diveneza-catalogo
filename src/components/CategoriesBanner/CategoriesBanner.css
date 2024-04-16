@@ -1,8 +1,9 @@
 .banner--categories {
 	display: flex;
 	/* background-color: red; */
-	height: 50vh;
+	height: 300px;
 	justify-content: center;
+	margin-top: 32px;
 }
 .categories {
 	display: flex;

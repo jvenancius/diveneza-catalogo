@@ -16,7 +16,7 @@ function Card(props) {
 				<img className="card--image" src={"/assets/" + props.img} alt={props.marca + " " + props.modelo}/>
 			</div>
 			<div className="card--description">
-				<img src={"./assets/logos/" + props.logo} alt={props.logo} style = {{width: "128px"}}/>
+				<h2>{props.marca}</h2>
 				<h3 className="card--desciption--price">{"10x " + precoFormatado}</h3>
 				<WppBtn
 					icone={true}

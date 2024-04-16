@@ -1,28 +1,23 @@
 .banner {
-	justify-content: center;
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
-	height: 581px;
-	padding-top: 32px;
-	padding-bottom: 64px;
+	justify-content: center;
 }
 
-.banner p, .banner h1, banner h2, banner div {
-	margin-left: 20%;
-	margin-right: 62%;
+.banner p, .banner h1, .banner h2, banner div {
 	color: white;
+}
+
+.banner--content {
+	display: flex;
+	margin-left: 20%;
+	flex-direction: column;
+	align-items: center;
 }
 
 .banner p {
 	font-size: 16px;
 	font-weight: 400;
-}
-
-.banner--short--title {
-		display: flex;
-		flex-direction: column;
-
 }
 
 .banner--short--title {
@@ -46,10 +41,14 @@
 	opacity: 1;
 	transition: 0.3s;
 	cursor: pointer;
-	margin-left: 20%;
 }
 
 .banner--button:hover {
 	opacity: 0.5;
 }
 
+
+.banner {
+	text-align: justify;
+	text-justify: distribute;
+}

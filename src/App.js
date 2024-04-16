@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import ScrolltoBtn from './components/Buttons/ScrollToBtn'
 import CategoriesBanner from './components/CategoriesBanner';
 import BrandsCarousel from './components/BrandsCarousel'
+import DividerLine from './components/DividerLine'
 
 function App() {
 	const logos = {
@@ -73,6 +74,7 @@ function App() {
 			titulo: "Mãe Clássica",
 			imagemCatergoria: "Classica.png",
 			bgCategoria: "#F4F4F4",
+			banner: "",
 			// cardStyle: cardsEstilos.comBordas,
 			// btnBg: paleta.colorido,
 			// btnFg: paleta.escrita,
@@ -122,6 +124,19 @@ function App() {
 			btnFg: paleta.escrita,
 			btnBg: paleta.branco,
 			frameColor: paleta.branco,
+			banner: <Banner 
+								bannerStyle={{height: "570px", backgroundPosition: "right", backgroundColor:"#939392"}}
+								bannerImg="./assets/prada banner.png"
+								contentWidth="25%"					
+			>
+				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento Personalizado</h2>
+			<DividerLine width="62px" height="3px" color="white" />
+			<h1 style={{fontWeight: 700, width:"268px", marginTop: "8px"}}>COMPRE SEM SAIR DE CASA</h1>
+			<p style={{width: "300px", paddingTop: "8px"}}>Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seus óculos e relógios das melhor e mais renomadas marcas do mundo.</p>
+									</Banner>
+
+			,
+
 			cards: [
 				{
 					marca: "Carolina Herrera",
@@ -157,6 +172,7 @@ function App() {
 			titulo: "Mãe Esportiva",
 			bgCategoria: "#F4F4F4",
 			imagemCatergoria: "Moderna.jpg",
+			banner: "",
 			// cardStyle: cardsEstilos.comBordas,
 			// btnBg: paleta.colorido,
 			// btnFg: paleta.escrita,
@@ -167,6 +183,7 @@ function App() {
 			btnFg: paleta.escrita,
 			btnBg: paleta.branco,
 			frameColor: paleta.branco,
+			banner: "",
 
 			cards: [
 				{
@@ -207,6 +224,7 @@ function App() {
 			btnBg: paleta.escrita,
 			btnFg: paleta.branco,
 			frameColor: paleta.branco,
+			banner: "",
 			cards: [
 				{
 					marca: "VERSACE",
@@ -248,13 +266,14 @@ function App() {
 		<BrandsCarousel/>
 		{categoriesData.map(e => (
 			<Category
-				bg={e.bg}
+				bg={e.bgCategoria}
 				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg}}
 				btnTexto="COMPRE AGORA"
 				btnMensagemPrefixo="Olá! Quero ver mais fotos do "
 				titulo={e.titulo.toUpperCase()}
 				cardStyle={e.cardStyle}
 				cards={e.cards}
+				banner={e.banner}
 				frameColor={e.frameColor}
 			/>
 		))}

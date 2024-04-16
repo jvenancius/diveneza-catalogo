@@ -1,5 +1,6 @@
 import Card from '../Card'
 import './Category.css'
+import Banner from '../Banner'
 
 function Category(props) {
   return (
@@ -20,6 +21,7 @@ function Category(props) {
 			/>
 		))}
 			</div>
+			{props.banner}
     </div>
   );
 }

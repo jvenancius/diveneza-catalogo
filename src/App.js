@@ -59,7 +59,7 @@ function App() {
 	let categoriesData = [
 		{
 			titulo: "Mãe Clássica",
-			imagemCatergoria: "https://source.unsplash.com/random",
+			imagemCatergoria: "Classica.png",
 			bgCategoria: "#F4F4F4",
 			// cardStyle: cardsEstilos.comBordas,
 			// btnBg: paleta.colorido,
@@ -100,7 +100,7 @@ function App() {
 		},
 		{
 			titulo: "Mãe Moderna",
-			imagemCatergoria: "https://source.unsplash.com/random",
+			imagemCatergoria: "Moderna.jpg",
 			bgCategoria: "#F4F4F4",
 			cardStyle: cardsEstilos.semBordas,
 			btnFg: paleta.escrita,
@@ -135,8 +135,8 @@ function App() {
 		},
 		{
 			titulo: "Mãe Esportiva",
-			imagemCatergoria: "https://source.unsplash.com/random",
 			bgCategoria: "#F4F4F4",
+			imagemCatergoria: "Moderna.jpg",
 			// cardStyle: cardsEstilos.comBordas,
 			// btnBg: paleta.colorido,
 			// btnFg: paleta.escrita,
@@ -177,7 +177,7 @@ function App() {
 		},
 		{
 			titulo: "Mãe Elegante",
-			imagemCatergoria: "https://source.unsplash.com/random",
+			imagemCatergoria: "Elegante.jpg",
 			bgCategoria: "#F4F4F4",
 			cardStyle: cardsEstilos.semBordas,
 			btnBg: paleta.escrita,
@@ -216,6 +216,7 @@ function App() {
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
+				btnStyle={estilosBotao.bannerBtn}
 		/>
 		<BrandsCarousel/>
 		{categoriesData.map(e => (

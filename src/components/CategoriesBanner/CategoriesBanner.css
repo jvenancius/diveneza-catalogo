@@ -1,0 +1,38 @@
+.banner--categories {
+	display: flex;
+	/* background-color: red; */
+	height: 50vh;
+	justify-content: center;
+}
+.categories {
+	display: flex;
+	height: 100%;
+	width: 50vw;
+	/* background-color: green; */
+	justify-content: space-evenly;
+	column-gap: 16px;
+}
+
+.category--card {
+	height: 330px;
+	background-repeat: no-repeat;
+  background-size: contain;
+	display: flex;
+	/* margin: auto; */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 32px;
+}
+
+.category--card h1 {
+	color: white;
+	font-weight: 400;
+	font-size: 1.7rem;
+	margin-top: 16px;
+}
+
+.category--card div {
+	/* margin-bottom: auto; */
+	margin-top: 40px;
+}

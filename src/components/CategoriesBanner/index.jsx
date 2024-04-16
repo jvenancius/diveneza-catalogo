@@ -1,20 +1,22 @@
 import ScrollToBtn from '../Buttons/ScrollToBtn'
+import DividerLine from '../DividerLine'
+import './CategoriesBanner.css'
 
 function CategoriesBanner(props) {
-  function buttonPress(e, section) {
-    e.preventDefault();
-		document.getElementById(section).scrollIntoView({block: "center", behavior: "smooth"})
-  }
   return (
     <div className="banner--categories">
 			<div className="categories">
 				{props.categories.map(categoryId => {
-					return (<div className="category--card" style={{backgroundImage: "url(" + categoryId.imagemCatergoria + ")"}}>
-						<ScrollToBtn
-							name={categoryId.nome}
-							btnStyle={props.btnStyle}
+					return (<div className="category--card" style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")"}}>
+						<div>
+							<DividerLine width="30px" height="3px" color= "white"/>
+							<h1>{categoryId.titulo}</h1>
+						</div>
+						<ScrollToBtn className="category--btn"
+							nome="VER MAIS"
+							categoria={categoryId.titulo.toUpperCase()}
+							btnStyle={{...props.btnStyle, width: "128px", marginTop: "20px"}}
 						/>
-						dsadasd
 					</div>
 					)
 				})}

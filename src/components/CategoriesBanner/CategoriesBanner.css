@@ -1,17 +1,18 @@
 .banner--categories {
 	display: flex;
 	/* background-color: red; */
-	height: 300px;
+	/* height: 300px; */
 	justify-content: center;
 	margin-top: 32px;
 }
 .categories {
 	display: flex;
 	height: 100%;
-	width: 50vw;
+	/* width: 50vw; */
 	/* background-color: green; */
 	justify-content: space-evenly;
 	column-gap: 16px;
+	flex-wrap: wrap;
 }
 
 .category--card {

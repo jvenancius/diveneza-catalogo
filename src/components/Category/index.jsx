@@ -2,7 +2,6 @@ import Card from '../Card'
 import './Category.css'
 
 function Category(props) {
-	console.log(props.titulo)
   return (
     <div id={props.titulo.replaceAll(" ", "_")} className="category"style={{backgroundColor: props.bg}}>
 		<h1 className='category--title'>{props.titulo.toUpperCase()}</h1>
@@ -10,6 +9,7 @@ function Category(props) {
 		{props.cards.map(e => (
 			<Card 
 				cardStyle={props.cardStyle}
+				logo={e.logo}
 				frameColor={props.frameColor}
 				marca={e.marca}
 				modelo={e.modelo}

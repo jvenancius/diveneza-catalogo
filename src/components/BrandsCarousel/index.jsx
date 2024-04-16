@@ -11,22 +11,22 @@ function BrandsCarousel(props) {
 			interval={50}
 		>
 			<Carousel.Item className='carousel--item' >
-				<img style={{width: "100px"}} src= "./assets/logos/carrera.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/swarovski.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/Fendi.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/PRADA.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/carolina herrera.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/burberry.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/TOM FORD.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/carrera.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/swarovski.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/Fendi.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/PRADA.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/carolina herrera.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/burberry.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/TOM FORD.png"/>
 			</Carousel.Item >
 			<Carousel.Item className='carousel--item' >
-				<img style={{width: "100px"}} src= "./assets/logos/carrera.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/swarovski.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/Fendi.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/PRADA.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/carolina herrera.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/burberry.png"/>
-				<img style={{width: "100px"}} src= "./assets/logos/TOM FORD.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/carrera.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/swarovski.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/Fendi.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/PRADA.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/carolina herrera.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/burberry.png"/>
+				<img style={{width: "100px", marginLeft: "16px"}} src= "./assets/logos/TOM FORD.png"/>
 			</Carousel.Item >
 </Carousel>
 		</div>
@@ -36,22 +36,3 @@ function BrandsCarousel(props) {
 export default BrandsCarousel;
 
 
-			// <Carousel.Item className='carousel--item' >
-			// 	<img style={{width: "100px"}} src= "./assets/logos/carrera.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/swarovski.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/Fendi.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/PRADA.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/carolina herrera.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/burberry.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/TIFFANY.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/TOM FORD.png"/>
-			// </Carousel.Item >
-			// <Carousel.Item className='carousel--item' >
-			// 	<img style={{width: "100px"}} src= "./assets/logos/carrera.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/swarovski.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/Fendi.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/PRADA.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/carolina herrera.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/burberry.png"/>
-			// 	<img style={{width: "100px"}} src= "./assets/logos/TOM FORD.png"/>
-			// </Carousel.Item >

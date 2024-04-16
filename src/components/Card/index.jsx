@@ -16,11 +16,11 @@ function Card(props) {
 				<img className="card--image" src={"/assets/" + props.img} alt={props.marca + " " + props.modelo}/>
 			</div>
 			<div className="card--description">
-				<h2 className="card--description--name">{props.marca}</h2>
+				<img src={"./assets/logos/" + props.logo} alt={props.logo} style = {{width: "128px"}}/>
 				<h3 className="card--desciption--price">{"10x " + precoFormatado}</h3>
 				<WppBtn
 					icone={true}
-					mensagem= {props.btnMensagemPrefixo + props.marca.toUpperCase() + props.modelo.toUpperCase()}
+					mensagem= {props.btnMensagemPrefixo + props.marca + "."}
 					texto="COMPRE AGORA"
 					btnStyle={props.btnStyle}
 				/>

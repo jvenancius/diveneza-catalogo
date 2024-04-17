@@ -5,7 +5,7 @@
 }
 
 .carousel--item {
-    -webkit-transition: 0s !important;
-    -o-transition: 0s !important;
-    transition: 10s !important;
+    -webkit-transition: 0s;
+    -o-transition: 0s;
+    transition: 10s;
 }

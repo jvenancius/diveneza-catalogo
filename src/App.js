@@ -7,6 +7,7 @@ import ScrolltoBtn from './components/Buttons/ScrollToBtn'
 import CategoriesBanner from './components/CategoriesBanner';
 import BrandsCarousel from './components/BrandsCarousel'
 import DividerLine from './components/DividerLine'
+import CardCarousel from './components/CardCarousel'
 
 function App() {
 	const logos = {
@@ -282,7 +283,7 @@ Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seu
 				btnStyle={{...estilosBotao.bannerBtn}}
 		/>
 		<BrandsCarousel/>
-		{categoriesData.map(e => (
+		{categoriesData.map((e,i) => (
 			<Category
 				bg={e.bgCategoria}
 				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg}}
@@ -295,6 +296,15 @@ Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seu
 				frameColor={e.frameColor}
 			/>
 		))}
+		<CardCarousel
+					marca= "Carolina Herrera"
+					modelo= "HER0224FWM"
+					logo= "logos.CH"
+					preco={1811}
+					img= "HER0224_FWM_1.png"
+			frameColor= {paleta.branco}
+
+		/>
 		<Footer/>
     </div>
   );

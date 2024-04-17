@@ -3,6 +3,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import './BrandsCarousel.css'
 
 function BrandsCarousel(props) {
+	// let itemStyle = {
+	// 	-webkit-transition: 0s,
+    // -o-transition: 0s,
+    // transition: 10s,
+// }
   return (
 		<div className='BrandsCarousel'>
 		<Carousel className="Carousel"

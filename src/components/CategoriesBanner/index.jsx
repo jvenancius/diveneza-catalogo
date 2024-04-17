@@ -15,7 +15,7 @@ function CategoriesBanner(props) {
 						<ScrollToBtn className="category--btn"
 							nome="VER MAIS"
 							categoria={categoryId.titulo.toUpperCase()}
-							btnStyle={{...props.btnStyle, width: "128px", marginTop: "20px"}}
+							btnStyle={{...props.btnStyle, width: "128px", marginTop: "10px"}}
 						/>
 					</div>
 					)

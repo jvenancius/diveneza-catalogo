@@ -118,7 +118,7 @@ function App() {
 		},
 		{
 			titulo: "Mãe Moderna",
-			imagemCatergoria: "Moderna.jpg",
+			imagemCatergoria: "Moderna.png",
 			bgCategoria: "#F4F4F4",
 			cardStyle: cardsEstilos.semBordas,
 			btnFg: paleta.escrita,
@@ -126,7 +126,7 @@ function App() {
 			frameColor: paleta.branco,
 			banner: <Banner 
 								bannerStyle={{height: "570px", backgroundPosition: "right", backgroundColor:"#939392"}}
-								bannerImg="./assets/prada banner.png"
+								bannerImg="./assets/capa site - compre online.png"
 								contentWidth="25%"					
 			>
 				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento Personalizado</h2>
@@ -171,7 +171,7 @@ function App() {
 		{
 			titulo: "Mãe Esportiva",
 			bgCategoria: "#F4F4F4",
-			imagemCatergoria: "Moderna.jpg",
+			imagemCatergoria: "Moderna.png",
 			banner: "",
 			// cardStyle: cardsEstilos.comBordas,
 			// btnBg: paleta.colorido,
@@ -218,7 +218,7 @@ function App() {
 		},
 		{
 			titulo: "Mãe Elegante",
-			imagemCatergoria: "Elegante.jpg",
+			imagemCatergoria: "Elegante.png",
 			bgCategoria: "#F4F4F4",
 			cardStyle: cardsEstilos.semBordas,
 			btnBg: paleta.escrita,
@@ -261,7 +261,7 @@ function App() {
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
-				btnStyle={estilosBotao.bannerBtn}
+				btnStyle={{...estilosBotao.bannerBtn}}
 		/>
 		<BrandsCarousel/>
 		{categoriesData.map(e => (

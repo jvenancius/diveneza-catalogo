@@ -134,7 +134,6 @@ function App() {
 			<h1 style={{fontWeight: 700, width:"268px", marginTop: "8px"}}>COMPRE SEM SAIR DE CASA</h1>
 			<p style={{width: "300px", paddingTop: "8px"}}>Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seus óculos e relógios das melhor e mais renomadas marcas do mundo.</p>
 									</Banner>
-
 			,
 
 			cards: [
@@ -224,7 +223,17 @@ function App() {
 			btnBg: paleta.escrita,
 			btnFg: paleta.branco,
 			frameColor: paleta.branco,
-			banner: "",
+			banner: <Banner 
+								bannerStyle={{height: "571px", backgroundPosition: "right", backgroundColor:"white"}}
+								bannerImg="./assets/capa site - orçamento de lentes.png"
+								contentWidth="25%"					
+			>
+				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento Personalizado</h2>
+			<DividerLine width="62px" height="3px" color="white" />
+			<h1 style={{fontWeight: 700, width:"268px", marginTop: "8px"}}>COMPRE SEM SAIR DE CASA</h1>
+			<p style={{width: "300px", paddingTop: "8px"}}>Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seus óculos e relógios das melhor e mais renomadas marcas do mundo.</p>
+									</Banner>
+			,
 			cards: [
 				{
 					marca: "VERSACE",

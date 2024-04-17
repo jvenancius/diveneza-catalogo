@@ -7,16 +7,17 @@ function CategoriesBanner(props) {
     <div className="banner--categories">
 			<div className="categories">
 				{props.categories.map(categoryId => {
-					return (<div className="category--card" style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")"}}>
-						<div>
-							<DividerLine width="30px" height="3px" color= "white"/>
-							<h1>{categoryId.titulo}</h1>
+					return (
+						<div className="category--card" style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")"}}>
+							<div className="category--card--info">
+									<DividerLine width="30px" height="3px" color= "white"/>
+									<h1>{categoryId.titulo}</h1>
+									<ScrollToBtn className="category--btn"
+										nome="VER MAIS"
+										categoria={categoryId.titulo.toUpperCase()}
+										btnStyle={{...props.btnStyle, width: "128px", marginTop: "10px"}}
+									/>
 						</div>
-						<ScrollToBtn className="category--btn"
-							nome="VER MAIS"
-							categoria={categoryId.titulo.toUpperCase()}
-							btnStyle={{...props.btnStyle, width: "128px", marginTop: "10px"}}
-						/>
 					</div>
 					)
 				})}

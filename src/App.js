@@ -127,12 +127,19 @@ function App() {
 			banner: <Banner 
 								bannerStyle={{height: "570px", backgroundPosition: "right", backgroundColor:"#939392"}}
 								bannerImg="./assets/capa site - compre online.png"
-								contentWidth="25%"					
+								contentWidth="100%"					
 			>
-				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento Personalizado</h2>
+			<div className="banner--content--inside" style={{width: "300px"}}>
+				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento  Personalizado</h2>
 			<DividerLine width="62px" height="3px" color="white" />
-			<h1 style={{fontWeight: 700, width:"268px", marginTop: "8px"}}>COMPRE SEM SAIR DE CASA</h1>
-			<p style={{width: "300px", paddingTop: "8px"}}>Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seus óculos e relógios das melhor e mais renomadas marcas do mundo.</p>
+			<h1 style={{fontWeight: 700, textJustify:"inter-character", marginTop: "8px"}}>
+			COMPRE SEM SAIR DE CASA
+			</h1>
+					<p style={{paddingTop: "8px", fontSize: "18px" }}>
+			Confira&ensp;nossos&ensp;modelos&ensp;disponíveis,&ensp;compre&ensp;e&ensp;receba&ensp;no&ensp;conforto&ensp;da&ensp;sua&ensp;casa&ensp;óculos&ensp;das&ensp;melhores&ensp;e&ensp;mais&ensp;renomadas&ensp;marcas&ensp;do&ensp;mundo.
+			</p>
+</div>
+			<div></div>
 									</Banner>
 			,
 
@@ -228,10 +235,12 @@ function App() {
 								bannerImg="./assets/capa site - orçamento de lentes.png"
 								contentWidth="25%"					
 			>
-				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento Personalizado</h2>
-			<DividerLine width="62px" height="3px" color="white" />
-			<h1 style={{fontWeight: 700, width:"268px", marginTop: "8px"}}>COMPRE SEM SAIR DE CASA</h1>
-			<p style={{width: "300px", paddingTop: "8px"}}>Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seus óculos e relógios das melhor e mais renomadas marcas do mundo.</p>
+				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px", color:"black"}}>Atendimento Personalizado</h2>
+			<DividerLine width="62px" height="3px" color="black" />
+			<h1 style={{fontWeight: 700, width:"268px", marginTop: "8px", color:"black"}}>COMPRE SEM SAIR DE CASA</h1>
+			<p style={{width: "300px", paddingTop: "8px",color:"black"}}>
+Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seus óculos e relógios das melhores e mais renomadas marcas do mundo.
+</p>
 									</Banner>
 			,
 			cards: [

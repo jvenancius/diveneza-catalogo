@@ -1,4 +1,5 @@
 import Card from '../Card'
+import CardTeste from '../CardTeste'
 import './Category.css'
 import Banner from '../Banner'
 
@@ -8,6 +9,7 @@ function Category(props) {
 		<h1 className='category--title'>{props.titulo.toUpperCase()}</h1>
 			<div className='cards' style={{backgroundColor: props.cards_bg}}>
 		{props.cards.map(e => (
+			<>
 			<Card 
 				cardStyle={props.cardStyle}
 				logo={e.logo}
@@ -19,6 +21,18 @@ function Category(props) {
 				btnStyle={props.btnStyle}
 				btnMensagemPrefixo={props.btnMensagemPrefixo}
 			/>
+			<CardTeste 
+				cardStyle={props.cardStyle}
+				logo={e.logo}
+				frameColor={props.frameColor}
+				marca={e.marca}
+				modelo={e.modelo}
+				preco={e.preco}
+				img={e.img}
+				btnStyle={props.btnStyle}
+				btnMensagemPrefixo={props.btnMensagemPrefixo}
+			/>
+</>
 		))}
 			</div>
 			{props.banner}

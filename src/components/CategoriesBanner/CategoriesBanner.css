@@ -62,3 +62,20 @@
 .category--card button {
 	margin: auto;
 }
+
+@media only screen and (max-width: 1200px) {
+.categories {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 16px;
+	justify-content: center;
+	row-gap: 16px;
+	margin-bottom: 32px;
+		}
+		.category--card {
+			margin: auto;
+			height: 100vh;
+		}
+}

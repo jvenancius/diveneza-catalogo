@@ -22,7 +22,7 @@ function App() {
 
 	}
 	const paleta = {
-		colorido: "#EFC4B7",
+		colorido: "##ead8ca",
 		branco: "#FFFFFF",
 		cinza: "#F4F4F4",
 		escrita: "#444040"

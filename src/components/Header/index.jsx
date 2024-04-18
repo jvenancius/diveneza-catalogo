@@ -7,9 +7,9 @@ function Header(props) {
 			<img src="./assets/CONHEÇA O CATÁLOGO DE DIA DAS MÃES.png" alt=""/>
 			<WppButton
 				icone={props.icone}
-				mensagem= {props.mensagem}
+				mensagem={props.mensagem}
 				texto={props.btnTexto}
-				btnStyle={props.btnStyle}
+				btnStyle={{...props.btnStyle, marginTop: "32px"}}
 			/>
 		</div>
   );

@@ -45,7 +45,7 @@ function App() {
 	const estilosBotao = {
 		bannerBtn: {
 			backgroundColor: "white",
-			marginTop: "32px",
+			// marginTop: "32px",
 			width: "200px",
 			height: "40px",
 			display: "inline-block",
@@ -270,6 +270,15 @@ Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seu
 		},
 	]
 
+	let counter = []
+	let total = 0
+	for (let i = 0; i < categoriesData.length;i++) {
+		counter.push(categoriesData[i].titulo + ": " + String(categoriesData[i].cards.length))
+		total += categoriesData[i].cards.length
+	}
+	counter.push("Total: " + String(total))
+	console.log(counter)
+
 
   return (
     <div className="App">
@@ -283,7 +292,7 @@ Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seu
 				btnStyle={{...estilosBotao.bannerBtn}}
 		/>
 		<BrandsCarousel/>
-		{categoriesData.map((e,i) => (
+		{categoriesData.map((e) => (
 			<Category
 				bg={e.bgCategoria}
 				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg}}
@@ -296,23 +305,8 @@ Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seu
 				frameColor={e.frameColor}
 			/>
 		))}
-		<CardCarousel
-					marca= "Carolina Herrera"
-					modelo= "HER0224FWM"
-					logo= "logos.CH"
-					preco={1811}
-					img= "HER0224_FWM_1.png"
-			frameColor= {paleta.branco}
-
-		/>
 		<Footer/>
     </div>
   );
 }
 export default App;
-
-
-		// <h1> ROLAR PARA </h1>
-		// {categoriesData.map(e => (
-		// 	<ScrolltoBtn name={e.titulo.toUpperCase()} />
-		// ))}

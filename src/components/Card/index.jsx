@@ -1,5 +1,7 @@
 import './Card.css'
 import WppBtn from '../Buttons/wppBtn';
+import 'bootstrap/dist/css/bootstrap.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 function Card(props) {
 	let formater = new Intl.NumberFormat('pt-BR', {
@@ -10,7 +12,7 @@ function Card(props) {
 	})
 	let precoFormatado = formater.format(props.preco/10)
   return (
-		<div className="card" style={{...props.cardStyle, borderRadius: "50px"}}>
+		<div className="card" style={{...props.propsStyle, borderRadius: "50px"}}>
 			<div className="card--image--div">
 				<img className="card--image--frame" src={"/assets/frame_" + props.frameColor.replace("#","") + ".png"} alt=""/>
 				<img className="card--image" src={"/assets/" + props.img} alt={props.marca + " " + props.modelo}/>

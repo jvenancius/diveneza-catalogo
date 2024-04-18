@@ -1,6 +1,6 @@
 .footer {
 	background-color: #222222;
-	height: 40vh;
+	/* height: 40vh; */
 	width: 100%;
 	color: white;
 }
@@ -18,17 +18,16 @@
 	height: 400px;
 }
 
-.footer--fields  {
-	margin-top: 128px;
-}
-
 .footer--fields h1 {
 	font-size: 16px;
 }
 
-
 .footer--fields p {
 	font-size: 14px;
+}
+
+.f--field {
+	width: 200px;
 }
 
 .footing--note {

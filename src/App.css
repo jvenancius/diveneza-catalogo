@@ -17,6 +17,7 @@ body {
 
 Button {
 	border: none;
+	text-decoration: none;
 	display: inline-block;
 	opacity: 1;
 	transition: 0.3s;

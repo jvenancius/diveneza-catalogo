@@ -9,7 +9,7 @@ function Header(props) {
 				icone={props.icone}
 				mensagem={props.mensagem}
 				texto={props.btnTexto}
-				btnStyle={{...props.btnStyle, marginTop: "32px"}}
+				btnStyle={{...props.btnStyle, marginTop: "16px", marginBottom:"16px"}}
 			/>
 		</div>
   );

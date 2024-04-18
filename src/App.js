@@ -8,8 +8,18 @@ import CategoriesBanner from './components/CategoriesBanner';
 import BrandsCarousel from './components/BrandsCarousel'
 import DividerLine from './components/DividerLine'
 import CardCarousel from './components/CardCarousel'
+import React, { useLayoutEffect, useState } from "react";
 
 function App() {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 	const logos = {
 		CH: "carolina herrera.png",
 		Burberry: "burberry.png",
@@ -46,11 +56,13 @@ function App() {
 		bannerBtn: {
 			backgroundColor: "white",
 			// marginTop: "32px",
-			width: "200px",
-			height: "40px",
+			// width: size[0] < size[1] ? "120px":"200px",
+			width: size[0] < size[1] ? "120px":"200px",
+			height: size[0] < size[1] ? "30px":"40px",
 			display: "inline-block",
 			borderRadius: "50px",
-			fontSize: "16px",
+			fontSize: size[0] < size[1] ? "10px" :"16px",
+			flexShrink: "0",
 		},
 		produtoBtn: {
 			backgroundColor: "black",
@@ -228,8 +240,8 @@ function App() {
 			imagemCatergoria: "Elegante.png",
 			bgCategoria: "#F4F4F4",
 			cardStyle: cardsEstilos.semBordas,
-			btnBg: paleta.escrita,
-			btnFg: paleta.branco,
+			btnFg: paleta.escrita,
+			btnBg: paleta.branco,
 			frameColor: paleta.branco,
 			banner: <Banner 
 								bannerStyle={{height: "571px", backgroundPosition: "right", backgroundColor:"white"}}
@@ -283,15 +295,15 @@ Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seu
   return (
     <div className="App">
 		<Header
-			btnStyle={estilosBotao.bannerBtn}
+			btnStyle={{...estilosBotao.bannerBtn}}
 			mensagem={"Conheça nosssos produtos."}
 			btnTexto="COMPRE AGORA"
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
-				btnStyle={{...estilosBotao.bannerBtn}}
+				btnStyle={{...estilosBotao.bannerBtn, width: size[0] < size[1] ? "120px":  "148px", height: size[0] < size[1] ? "20px" : "40px"}}
+				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}}
 		/>
-		<BrandsCarousel/>
 		{categoriesData.map((e) => (
 			<Category
 				bg={e.bgCategoria}

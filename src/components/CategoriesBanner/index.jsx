@@ -13,7 +13,7 @@ function CategoriesBanner(props) {
         loop={true}
         navigation={true}
         modules={[Navigation]}
-		style={{height:"80vh"}}
+				style={{height:"40vh"}}
 
 >
 			{props.categories.map(categoryId => {
@@ -23,17 +23,17 @@ function CategoriesBanner(props) {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-								height: "80%"
+							height: "100%"
             }}
 					>
 						<div style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")", backgroundRepeat:"no-repeat", height: "100%", width: "100%", backgroundSize:"contain", backgroundPosition:"center", display: "flex", justifyContent: "center"}}>
-							<div style={{position:"absolute", bottom: "64px", display: "flex", flexDirection: "column", justifyContent: "space-between", height: "20%", alignContent:"flex-end"}}>
-								<DividerLine width="20%" height="2%" color="white" />
-								<h1 style={{color:"white"}}>{categoryId.titulo}</h1>
+							<div style={{position:"absolute", bottom: "15%", display: "flex", flexDirection: "column", justifyContent: "space-between", height: "20%", alignContent:"flex-end"}}>
+								<DividerLine width="25px" height="4%" color="white" style={{flexShrink: "0", flexBasis:"0"}} />
+								<h1 style={{color:"white", ...props.titleStyle}}>{categoryId.titulo}</h1>
 								<ScrollToBtn
 									nome="VER MAIS"
 									categoria={categoryId.titulo.toUpperCase()}
-									btnStyle={{...props.btnStyle, width: "148px"}}
+									btnStyle={{...props.btnStyle }}
 								/>
 							</div>
 						</div>

@@ -8,7 +8,7 @@ import CategoriesBanner from './components/CategoriesBanner';
 import BrandsCarousel from './components/BrandsCarousel'
 import DividerLine from './components/DividerLine'
 import CardCarousel from './components/CardCarousel'
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState, useEffect } from "react";
 
 function App() {
   const [size, setSize] = useState([0, 0]);
@@ -82,7 +82,7 @@ function App() {
 	// 	}
 	// ]
 
-	let categoriesData = [
+	let [categoriesData, setCategoriesData] = useState([
 		{
 			titulo: "Mãe Clássica",
 			imagemCatergoria: "Classica.png",
@@ -268,16 +268,24 @@ function App() {
 				},
 			]
 		},
-	]
+	])
 
-	let counter = []
-	let total = 0
-	for (let i = 0; i < categoriesData.length;i++) {
-		counter.push(categoriesData[i].titulo + ": " + String(categoriesData[i].cards.length))
-		total += categoriesData[i].cards.length
-	}
-	counter.push("Total: " + String(total))
-	console.log(counter)
+	useEffect(() => {
+	// let counter = []
+	// let total = 0
+	// for (let i = 0; i < categoriesData.length;i++) {
+	// 	counter.push(categoriesData[i].titulo + ": " + String(categoriesData[i].cards.length))
+	// 	total += categoriesData[i].cards.length
+	// }
+	// counter.push("Total: " + String(total))
+	// console.log(counter)
+		let tempCategoriesData = categoriesData
+		tempCategoriesData.forEach(i => {
+			 i.cards = i.cards.sort((a,b) => a["preco"] > b["preco"])
+		setCategoriesData(tempCategoriesData)
+		})
+	}, [])
+
 
 
   return (

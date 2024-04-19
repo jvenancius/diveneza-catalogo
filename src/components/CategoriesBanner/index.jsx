@@ -2,19 +2,23 @@ import ScrollToBtn from '../Buttons/ScrollToBtn'
 import DividerLine from '../DividerLine'
 import './CategoriesBanner.css'
 
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 function CategoriesBanner(props) {
+	console.log(props.heightStyle)
   return (
 <Swiper 
         slidesPerView={1}
         loop={true}
+			centeredSlides={true}
+				spaceBetween={-120}
         navigation={true}
-        modules={[Navigation]}
-				style={{height:"40vh"}}
-
+        modules={[Navigation, Pagination]}
+				style={{height: props.heightStyle}}
 >
 			{props.categories.map(categoryId => {
 				return (
@@ -23,12 +27,13 @@ function CategoriesBanner(props) {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-							height: "100%"
+							height: props.heightStyle,
             }}
 					>
 						<div style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")", backgroundRepeat:"no-repeat", height: "100%", width: "100%", backgroundSize:"contain", backgroundPosition:"center", display: "flex", justifyContent: "center"}}>
-							<div style={{position:"absolute", bottom: "15%", display: "flex", flexDirection: "column", justifyContent: "space-between", height: "20%", alignContent:"flex-end"}}>
-								<DividerLine width="25px" height="4%" color="white" style={{flexShrink: "0", flexBasis:"0"}} />
+							<div style={{display: "flex", flexDirection: "column", justifyContent: "center", height: "100%", }}>
+					<div style={{marginTop:"auto", marginBottom:"32px"}}>
+								<DividerLine width="25px" height="3px" color="white" style={{flexShrink: "0", flexGrow: "0", flexBasis:"0"}} />
 								<h1 style={{color:"white", ...props.titleStyle}}>{categoryId.titulo}</h1>
 								<ScrollToBtn
 									nome="VER MAIS"
@@ -36,6 +41,7 @@ function CategoriesBanner(props) {
 									btnStyle={{...props.btnStyle }}
 								/>
 							</div>
+</div>
 						</div>
 					</SwiperSlide>
 				)

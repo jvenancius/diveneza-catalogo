@@ -17,6 +17,7 @@ function Footer() {
 	}
   return (
     <div className="footer">
+		<div className='footer--fields--container'>
 			<div className="footer--fields" style={size[0] < size[1] ? styleMobile:{}}>
 				<div className='endereço f--field'>
 					<h1>ENDEREÇO</h1>
@@ -40,9 +41,13 @@ function Footer() {
 					</div>
 				</div>
 			</div>
-			<div className='footing--note'>
-				<p>© 2024 Ótica Diveneza. Todos os direitos reservados.</p>
-				<div className="socials">
+			</div>
+			<div className='footing--note' style={size[0] < size[1] ?{display: "flex", flexDirection: "column"} : {}}>
+				{size[0] > size[1] ? 
+					<p>© 2024 Ótica Diveneza. Todos os direitos reservados.</p>
+					:
+				<p style={{margin:"0", marginBottom:"12px", textAlign: "center"}}>© 2024 Ótica Diveneza.<br></br> Todos os direitos reservados.</p>}
+				<div style={size[0] > size[1] ? {marginRight: "17%" } : {marginRight: "5%"}} className="socials">
 					<a href="https://www.facebook.com/diveneza/"><i className="fa fa-facebook-f"></i></a>
 					<a href="https://www.instagram.com/divenezaotica/"><i className="fa fa-instagram"></i></a>
 				</div>

@@ -138,7 +138,7 @@ function App() {
 			btnBg: paleta.branco,
 			frameColor: paleta.branco,
 			banner: <Banner 
-								bannerStyle={{height: "570px", backgroundPosition: "right", backgroundColor:"#939392"}}
+								bannerStyle={{height: "570px", backgroundPosition: "right", backgroundColor:"#bcafac"}}
 								bannerImg="./assets/capa site - compre online.png"
 								contentWidth="100%"					
 			>
@@ -296,13 +296,16 @@ Confira nossos modelos disponíveis, compre e receba no conforto da sua casa seu
     <div className="App">
 		<Header
 			btnStyle={{...estilosBotao.bannerBtn}}
+			headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
 			mensagem={"Conheça nosssos produtos."}
 			btnTexto="COMPRE AGORA"
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
-				btnStyle={{...estilosBotao.bannerBtn, width: size[0] < size[1] ? "120px":  "148px", height: size[0] < size[1] ? "20px" : "40px"}}
+				btnStyle={{...estilosBotao.bannerBtn, width: size[0] < size[1] ? "120px" : "148px", height: size[0] < size[1] ? "20px" : "40px"}}
 				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}}
+				heightStyle={size[0] < size[1] ? "43vh" : "40vh"}
+				size={size}
 		/>
 		{categoriesData.map((e) => (
 			<Category

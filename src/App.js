@@ -298,7 +298,7 @@ function App() {
 		{categoriesData.map((e) => (
 			<Category
 				bg={e.bgCategoria}
-				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg}}
+				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg, webkitTextFillColor: e.btnFg}}
 				btnTexto="COMPRE AGORA"
 				btnMensagemPrefixo="Olá! Quero ver mais fotos do "
 				titulo={e.titulo.toUpperCase()}

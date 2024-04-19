@@ -30,5 +30,8 @@ Button:hover {
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
+	--swiper-navigation-size: 32px;
+	color: white;
+	text-shadow: 2px 2px 2px #777777ff;
 }
 

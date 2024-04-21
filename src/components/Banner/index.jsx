@@ -6,7 +6,7 @@ function Banner(props) {
 		backgroundRepeat: "no-repeat",
 		}
   return (
-		<div className="banner" style={{...styleImage, ...props.bannerStyle, marginTop: "64px"}} >
+		<div loading="lazy" className="banner" style={{...styleImage, ...props.bannerStyle, marginTop: "64px"}} >
 		<div className="banner--content" style={{width:props.contentWidth}}>
 		{props.children}
 			</div>

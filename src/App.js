@@ -170,8 +170,8 @@ function App() {
 					"TOM FORD.png",
 				]}		
 				imgWidth = {size[0] < size[1] ? "64px" : "96px"}
-			containerSize = {size[0] < size[1] ? "100%" : "41%"}
-		translation = {size[0] < size[1] ? -875 : -817}
+			containerSize = {size[0] < size[1] ? "100%" : "39%"}
+		translation = {size[0] < size[1] ? -831 : -788}
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
@@ -182,7 +182,7 @@ function App() {
 		{categoriesData.map((e) => (
 			<Category
 				bg={e.bgCategoria}
-				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg, webkitTextFillColor: e.btnFg}}
+				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg, WebkitTextFillColor: e.btnFg}}
 				btnTexto="COMPRE AGORA"
 				btnMensagemPrefixo="Olá! Quero ver mais fotos do "
 				titulo={e.titulo.toUpperCase()}
@@ -190,6 +190,7 @@ function App() {
 				cards={e.cards}
 				banner={e.banner}
 				frameColor={e.frameColor}
+				key={"categoria--" + e.titulo}
 			/>
 		))}
 		<Footer/>

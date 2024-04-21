@@ -37,6 +37,7 @@ function Version(props) {
               alignItems: "center",
             }}
 						className="card--slide"
+							key={e.marca + e.modelo + "--slider"}
           >
             <Card
 							propsStyle={{...props.cardStyle, width:"90%", height: "550px"}}
@@ -48,6 +49,7 @@ function Version(props) {
               btnStyle={props.btnStyle}
               btnMensagemPrefixo={props.btnMensagemPrefixo}
 							id={e.id}
+							key={e.marca + e.modelo}
 							
             />
           </SwiperSlide>
@@ -56,7 +58,7 @@ function Version(props) {
     );
   }
   return (
-    <div style={{ display: "flex", marginBottom: "64px" }}>
+    <div style={{ display: "flex", marginBottom: "64px"}}>
       <div
         style={{
           display: "grid",
@@ -77,6 +79,7 @@ function Version(props) {
             img={e.img}
             btnStyle={props.btnStyle}
             btnMensagemPrefixo={props.btnMensagemPrefixo}
+						key={e.marca + e.modelo}
           />
         ))}
       </div>

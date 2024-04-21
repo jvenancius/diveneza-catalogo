@@ -12,14 +12,13 @@ import { useState, useEffect } from "react"
 function BrandsCarousel(props) {
 
 	const [goingBack, setGoingBack] = useState(false)
-	const time = 5000
+	const time = 3000
 
-	console.log(goingBack)
-	console.log(props.translation)
 	let slideStyle = {
 		// translate: `${(goingBack ? -8000 * -1 : -6000) * offset}%`,
 		translate: `${goingBack ? props.translation : 0}%`,
-		// translate: "-817%",
+		// translate: "-831%",
+		// translate: "-0%",
 		// translate: "-0%",
 		display: "block",
 		flexShrink: 0,
@@ -59,15 +58,15 @@ function BrandsCarousel(props) {
 	}, [goingBack])
   return (
 		<div style={{display:"flex", justifyContent:"center"}}>
-		<div style={{width:props.containerSize, display: "flex", justifyContent:"space-around", marginTop:"32px", marginBottom:"32px", columnGap:"16px", overflow:"hidden"}}>
+		<div style={{width:props.containerSize, display: "flex", justifyContent:"space-evenly", marginTop:"32px", marginBottom:"32px", columnGap:"12px", overflow:"hidden"}}>
 		{props.brands.map(brand => (
-			<img style={{...slideStyle, width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
+			<img key={"brand--" + brand + "1"} style={{...slideStyle, width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
 		))}
 		{props.brands.map(brand => (
-			<img style={{...slideStyle, width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
+			<img key={"brand--" + brand + "2"} style={{...slideStyle, width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
 		))}
 		{props.brands.map(brand => (
-			<img style={{...slideStyle, width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
+			<img key={"brand--" + brand + "3"} style={{...slideStyle, width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
 		))}
 </div>
 </div>

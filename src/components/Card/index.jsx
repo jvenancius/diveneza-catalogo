@@ -14,8 +14,8 @@ function Card(props) {
   return (
 		<div className="card" style={{...props.propsStyle, borderRadius: "50px"}}>
 			<div className="card--image--div">
-				<img className="card--image--frame" src={"/assets/frame_" + props.frameColor.replace("#","") + ".png"} alt=""/>
-				<img className="card--image" src={"/assets/" + props.img} alt={props.marca + " " + props.modelo}/>
+				<img loading='lazy' className="card--image--frame" src={"/assets/frame_" + props.frameColor.replace("#","") + ".png"} alt=""/>
+				<img loading="lazy" className="card--image" src={"/assets/" + props.img} alt={props.marca + " " + props.modelo}/>
 			</div>
 			<div className="card--description">
 				<h2>{props.marca}</h2>

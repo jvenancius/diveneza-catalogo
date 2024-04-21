@@ -32,7 +32,7 @@ function CategoriesBanner(props) {
 								height: props.heightStyle,
 							}}
 						>
-							<div style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")", backgroundRepeat: "no-repeat", height: "100%", width: "100%", backgroundSize: "contain", backgroundPosition: "center", display: "flex", justifyContent: "center"}}>
+							<div loading="lazy" style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")", backgroundRepeat: "no-repeat", height: "100%", width: "100%", backgroundSize: "contain", backgroundPosition: "center", display: "flex", justifyContent: "center"}}>
 								<div style={{display: "flex", flexDirection: "column", justifyContent: "center", height: "100%", }}>
 									<div style={{marginTop: "auto", marginBottom: "32px"}}>
 										<DividerLine width="25px" height="3px" color="white" style={{flexShrink: "0", flexGrow: "0", flexBasis: "0"}} />
@@ -60,7 +60,7 @@ function CategoriesBanner(props) {
 			}}>
 				{props.categories.map(categoryId => {
 					return (
-							<div style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")", backgroundRepeat: "no-repeat", height: "100%", width: "100%", backgroundSize: "contain", backgroundPosition: "center", display: "flex", justifyContent: "center"}}>
+							<div key={categoryId.titulo} style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")", backgroundRepeat: "no-repeat", height: "100%", width: "100%", backgroundSize: "contain", backgroundPosition: "center", display: "flex", justifyContent: "center"}}>
 								<div style={{display: "flex", flexDirection: "column", justifyContent: "center", height: "100%", }}>
 									<div style={{marginTop: "auto", marginBottom: "32px"}}>
 										<DividerLine width="25px" height="3px" color="white" style={{flexShrink: "0", flexGrow: "0", flexBasis: "0"}} />

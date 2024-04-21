@@ -48,8 +48,8 @@ function Footer() {
 					:
 				<p style={{margin:"0", marginBottom:"12px", textAlign: "center"}}>© 2024 Ótica Diveneza.<br></br> Todos os direitos reservados.</p>}
 				<div style={size[0] > size[1] ? {marginRight: "17%" } : {marginRight: "5%"}} className="socials">
-					<a href="https://www.facebook.com/diveneza/"><i className="fa fa-facebook-f"></i></a>
-					<a href="https://www.instagram.com/divenezaotica/"><i className="fa fa-instagram"></i></a>
+					<a href="https://www.facebook.com/diveneza/" target="_blank"><i className="fa fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/divenezaotica/" target="_blank"><i className="fa fa-instagram"></i></a>
 				</div>
 			</div>
     </div>

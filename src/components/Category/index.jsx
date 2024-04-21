@@ -28,6 +28,7 @@ function Version(props) {
         loop={true}
         navigation={true}
         modules={[Navigation]}
+				style={{height:"100%", minHeight:"460px"}}
       >
         {props.cards.map((e) => (
           <SwiperSlide
@@ -40,7 +41,7 @@ function Version(props) {
 							key={e.marca + e.modelo + "--slider"}
           >
             <Card
-							propsStyle={{...props.cardStyle, width:"90%", height: "550px"}}
+							propsStyle={{...props.cardStyle}}
               frameColor={props.frameColor}
               marca={e.marca}
               modelo={e.modelo}
@@ -50,7 +51,7 @@ function Version(props) {
               btnMensagemPrefixo={props.btnMensagemPrefixo}
 							id={e.id}
 							key={e.marca + e.modelo}
-							
+							iconeSize={props.iconeSize}
             />
           </SwiperSlide>
         ))}
@@ -80,6 +81,7 @@ function Version(props) {
             btnStyle={props.btnStyle}
             btnMensagemPrefixo={props.btnMensagemPrefixo}
 						key={e.marca + e.modelo}
+							iconeSize={props.iconeSize}
           />
         ))}
       </div>

@@ -32,12 +32,14 @@ function App() {
 		comBordas:
 		{
 			border: "4px solid" + paleta.colorido,
-			backgroundColor: paleta.branco
+			backgroundColor: paleta.branco,
+			aspectRatio: size[0] < size[1] ? "7/9" : "7/9" 
 		},
 		semBordas:
 		{
 			border: "none",
-			backgroundColor: paleta.colorido
+			backgroundColor: paleta.colorido,
+			aspectRatio: size[0] < size[1] ? "7/9" : "6/9" 
 		}
 	}
 
@@ -47,12 +49,13 @@ function App() {
 			color: "black",
 			// marginTop: "32px",
 			// width: size[0] < size[1] ? "120px":"200px",
-			width: "160px",
-			height: "40px",
-			display: "inline-block",
+			// width: "100%",
+			// height: "40px",
 			borderRadius: "50px",
-			fontSize: size[0] < size[1] ? "80%" : "80%",
-			flexShrink: "0",
+			fontSize: size[0] < size[1] ? size[0]/42 + "px" : size[1]/55 + "px",
+			aspectRatio: size[0] < size[1] ? "4/1" : "5/1",
+			width: size[0] < size[1] ? "100%" : "15%",
+			// flexShrink: "0",
 			paddingLeft: "2%",
 			paddingRight: "2%",
 			display: "flex",
@@ -65,10 +68,10 @@ function App() {
 			backgroundColor: "black",
 			color: "white",
 			marginTop: "16px",
-			width: "280px",
-			height: "64px",
+			// width: "280px",
+			// height: "64px",
 			borderRadius: "50px",
-			fontSize: "20px",
+			fontSize: size[0] < size[1] ? Math.min(size[0] / 16, 20) + "px" : size[0] / 130 + "px",
 		}
 	}
 
@@ -133,6 +136,11 @@ function App() {
 	useEffect(() => {
 		let tempCategoriesData = categoriesData
 		let idCounter = 0
+
+
+		tempCategoriesData.forEach(i => {
+			cardsData[i.titulo] = cardsData[i.titulo].sort((a, b) => a.modelo >= b.modelo)
+		})
 		tempCategoriesData.forEach(i => {
 			cardsData[i.titulo] = cardsData[i.titulo].sort((a, b) => a.preco >= b.preco)
 			cardsData[i.titulo] = cardsData[i.titulo].map(e => {
@@ -141,23 +149,23 @@ function App() {
 			})
 			i.cards = cardsData[i.titulo]
 		})
-		console.log(tempCategoriesData)
 		setCategoriesData(tempCategoriesData)
-},[categoriesData])
+}, [])
 
 
 
   return (
     <div className="App">
 		<Header
-			btnStyle={{...estilosBotao.bannerBtn, marginTop:"8px", marginBottom:"8px"}}
-			// headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
-			headerStyle={{height: size[0] < size[1] ? "350px" :"620px"}}
-			imgStyle={{width: size[0] < size[1] ?  "95%" : "100%"}}
-			mensagem={"Conheça nosssos produtos."}
-			btnTexto="COMPRE AGORA"
-			icone={true}
-			iconeSize = "24px"
+				btnStyle={{...estilosBotao.bannerBtn, marginTop: "8px", marginBottom: "8px"}}
+				// headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
+				headerStyle={{height: size[0] < size[1] ? "80%" : "620px", display:"flex", alignItems:"center"}}
+				imgStyle={{width: size[0] < size[1] ? "95%" : "100%"}}
+				mensagem={"Conheça nosssos produtos."}
+				btnTexto="COMPRE AGORA"
+				icone={true}
+				iconeSize={size[0] < size[1] ? size[0] / 25 + "px" : size[1] / 52 + "px"}
+				btnSize= {size[0] < size[1] ? "30%" : "80%"}
 		/>
 		<BrandsCarousel 
 				brands={[
@@ -175,13 +183,14 @@ function App() {
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
-				btnStyle={{...estilosBotao.bannerBtn, width: size[0] < size[1] ? "120px" : "148px", height: size[0] < size[1] ? "20px" : "40px"}}
+				btnStyle={{...estilosBotao.bannerBtn, width: size[0] < size[1] ? "120px" : "148px"}}
 				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}} heightStyle={size[0] < size[1] ? "280px" : "400px"}
 				size={size}
 		/>
 		{categoriesData.map((e) => (
 			<Category
 				bg={e.bgCategoria}
+				iconeSize={size[0] < size[1] ? Math.min(size[0] / 16, 32) + "px" : size[0] / 94 + "px"}
 				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg, WebkitTextFillColor: e.btnFg}}
 				btnTexto="COMPRE AGORA"
 				btnMensagemPrefixo="Olá! Quero ver mais fotos do "

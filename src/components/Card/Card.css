@@ -7,6 +7,8 @@
 	box-sizing: border-box;
 	border-radius: 50px;
 	border: 5px solid;
+	flex-grow: 0;
+	flex-shrink: 0;
 	/* justify-content: space-between; */
 }
 
@@ -30,7 +32,7 @@
 .card--image--frame{
 	width: 100%;
 	box-sizing: border-box;
-	border-radius: 40px;
+	border-radius: 50px;
 }
 
 .card--description {

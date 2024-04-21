@@ -9,14 +9,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 function CategoriesBanner(props) {
-	console.log(props.heightStyle)
 	if (props.size[0] < props.size[1]) {
 		return (
 			<Swiper
 				slidesPerView={1}
 				loop={true}
 				centeredSlides={true}
-				spaceBetween={-120}
+				spaceBetween={(props.size[0] - 232) * -1}
 				navigation={true}
 				modules={[Navigation]}
 				style={{height: props.heightStyle}}
@@ -40,7 +39,7 @@ function CategoriesBanner(props) {
 										<ScrollToBtn
 											nome="VER MAIS"
 											categoria={categoryId.titulo.toUpperCase()}
-											btnStyle={{...props.btnStyle}}
+											btnStyle={{...props.btnStyle, width:"70%", aspectRatio:"8/2"}}
 										/>
 									</div>
 								</div>

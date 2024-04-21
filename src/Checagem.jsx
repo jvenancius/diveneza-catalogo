@@ -8,9 +8,13 @@ function Checagem() {
 	const [total, setTotal] = useState(0)
 	const [sortedArray, setSortedArray] = useState([])
 
-	useEffect(()=>{
+	useEffect(()=> {
 		let counter = 0
 		let tempSorted = []
+
+		Object.keys(cardsData).forEach(i => {
+			cardsData[i] = cardsData[i].sort((a,b) => a.modelo > b.modelo)
+		})
 		Object.keys(cardsData).forEach(i => {
 			counter += cardsData[i].length
 			tempSorted.push(...cardsData[i].sort((a,b) => a.preco >= b.preco))

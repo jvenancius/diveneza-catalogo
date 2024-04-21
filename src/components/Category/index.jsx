@@ -1,7 +1,7 @@
 import Card from "../Card";
 import "./Category.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Carousel from "react-bootstrap/Carousel";
+// import Carousel from "react-bootstrap/Carousel";
 // import Slider from '../Slider'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -24,6 +24,7 @@ function Version(props) {
     return (
       <Swiper
         slidesPerView={1}
+				spaceBetween={10}
         loop={true}
         navigation={true}
         modules={[Navigation]}
@@ -35,10 +36,10 @@ function Version(props) {
               justifyContent: "center",
               alignItems: "center",
             }}
+						className="card--slide"
           >
             <Card
-              propsStyle={props.cardStyle}
-              logo={e.logo}
+							propsStyle={{...props.cardStyle, width:"90%", height: "550px"}}
               frameColor={props.frameColor}
               marca={e.marca}
               modelo={e.modelo}
@@ -46,6 +47,8 @@ function Version(props) {
               img={e.img}
               btnStyle={props.btnStyle}
               btnMensagemPrefixo={props.btnMensagemPrefixo}
+							id={e.id}
+							
             />
           </SwiperSlide>
         ))}
@@ -70,6 +73,7 @@ function Version(props) {
             marca={e.marca}
             modelo={e.modelo}
             preco={e.preco}
+						id={e.id}
             img={e.img}
             btnStyle={props.btnStyle}
             btnMensagemPrefixo={props.btnMensagemPrefixo}
@@ -81,6 +85,7 @@ function Version(props) {
 }
 
 function Category(props) {
+	if (!props.cards) return <></>
   return (
     <div
       id={props.titulo.replaceAll(" ", "_")}

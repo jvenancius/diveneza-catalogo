@@ -22,9 +22,10 @@ function Card(props) {
 				<h3 className="card--desciption--price">{"10x " + precoFormatado}</h3>
 				<WppBtn
 					icone={true}
-					mensagem= {props.btnMensagemPrefixo + props.marca + "."}
+					mensagem= {props.btnMensagemPrefixo + props.marca + " nº" + props.id + "."}
 					texto="COMPRE AGORA"
 					btnStyle={props.btnStyle}
+					iconeSize="24px"
 				/>
 			</div>
     </div>

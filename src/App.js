@@ -9,29 +9,18 @@ import BrandsCarousel from './components/BrandsCarousel'
 import DividerLine from './components/DividerLine'
 import CardCarousel from './components/CardCarousel'
 import React, { useLayoutEffect, useState, useEffect } from "react";
+import cardsData from './data/cards.json'
 
 function App() {
-  const [size, setSize] = useState([0, 0]);
-  useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-	const logos = {
-		CH: "carolina herrera.png",
-		Burberry: "burberry.png",
-		Tiffany: "TIFFANY.png",
-		TomFord: "TOM FORD.png",
-		Carrera: "carrera.png",
-		Swarovski: "swarovski.png",
-		Fendi: "Fendi.png",
-		Prada: "PRADA.png",
-		Versace: ""
-
-	}
+	const [size, setSize] = useState([0, 0]);
+	useLayoutEffect(() => {
+		function updateSize() {
+			setSize([window.innerWidth, window.innerHeight]);
+		}
+		window.addEventListener("resize", updateSize);
+		updateSize();
+		return () => window.removeEventListener("resize", updateSize);
+	}, []);
 	const paleta = {
 		colorido: "#ead8ca",
 		branco: "#FFFFFF",
@@ -40,12 +29,12 @@ function App() {
 
 	}
 	const cardsEstilos = {
-	comBordas:
+		comBordas:
 		{
 			border: "4px solid" + paleta.colorido,
 			backgroundColor: paleta.branco
 		},
-	semBordas:
+		semBordas:
 		{
 			border: "none",
 			backgroundColor: paleta.colorido
@@ -55,14 +44,22 @@ function App() {
 	const estilosBotao = {
 		bannerBtn: {
 			backgroundColor: "white",
+			color: "black",
 			// marginTop: "32px",
 			// width: size[0] < size[1] ? "120px":"200px",
-			width: size[0] < size[1] ? "120px":"200px",
-			height: size[0] < size[1] ? "30px":"40px",
+			width: "160px",
+			height: "30px",
 			display: "inline-block",
 			borderRadius: "50px",
-			fontSize: size[0] < size[1] ? "10px" :"16px",
+			fontSize: size[0] < size[1] ? "80%" : "80%",
 			flexShrink: "0",
+			paddingLeft: "2%",
+			paddingRight: "2%",
+			display: "flex",
+			justifyContent: "center",
+			alignContent:"center",
+			alignItems: "center",
+			textDecoration: "none"
 		},
 		produtoBtn: {
 			backgroundColor: "black",
@@ -75,59 +72,17 @@ function App() {
 		}
 	}
 
-	// let categoriesBannerData = [
-	// 	{
-	// 		nome: "óculos de grau",
-	// 		imageUrl: "https://source.unsplash.com/random",
-	// 	}
-	// ]
-
-	let [categoriesData, setCategoriesData] = useState([
+	const [categoriesData, setCategoriesData] = useState([
 		{
 			titulo: "Mãe Clássica",
 			imagemCatergoria: "Classica.png",
 			bgCategoria: "#F4F4F4",
 			banner: "",
-			// cardStyle: cardsEstilos.comBordas,
-			// btnBg: paleta.colorido,
-			// btnFg: paleta.escrita,
-			// frameColor: paleta.colorido,
-
-
 			cardStyle: cardsEstilos.semBordas,
 			btnBg: paleta.branco,
 			btnFg: paleta.escrita,
 			frameColor: paleta.branco,
-			cards: [
-				{
-					marca: "Carolina Herrera",
-					logo: logos.CH,
-					modelo: "HER0249GS 8079O",
-					preco: 1291,
-					img: "HER0249GS_8079O.png"
-				},
-				{
-					marca: "Carolina Herrera",
-					logo: logos.CH,
-					modelo: "HER0250/S TUIHA",
-					img: "HER0250S_TUIHA.png",
-					preco: 1291,
-				},
-				{
-					marca: "Tiffany & Co.",
-					modelo: "TF4215 8015T5",
-					logo: logos.Tiffany,
-					preco: 3317,
-					img: "TF4215_8015T5_1.png"
-				},
-				{
-					marca: "Burberry",
-					modelo: "B13761343",
-					logo: logos.Burberry,
-					preco: 1557,
-					img: "B1376_1343_1(2).png"
-				},
-			]
+			cards: []
 		},
 		{
 			titulo: "Mãe Moderna",
@@ -141,99 +96,26 @@ function App() {
 								bannerStyle={{height: "570px", backgroundPosition: "right", backgroundColor:"#bcafac"}}
 								bannerImg="./assets/capa site - compre online.png"
 								contentWidth="100%"					
-			>
-			<div className="banner--content--inside" style={{width: "300px"}}>
-				<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento  Personalizado</h2>
-			<DividerLine width="62px" height="3px" color="white" />
-			<h1 style={{fontWeight: 700, textJustify:"inter-character", marginTop: "8px"}}>
-			COMPRE SEM SAIR DE CASA
-			</h1>
-					<p style={{paddingTop: "8px", fontSize: "18px" }}>
-			Confira&ensp;nossos&ensp;modelos&ensp;disponíveis,&ensp;compre&ensp;e&ensp;receba&ensp;no&ensp;conforto&ensp;da&ensp;sua&ensp;casa&ensp;óculos&ensp;das&ensp;melhores&ensp;e&ensp;mais&ensp;renomadas&ensp;marcas&ensp;do&ensp;mundo.
-			</p>
-</div>
-			<div></div>
-									</Banner>
+							>
+								<div className="banner--content--inside" style={{width: "300px"}}>
+									<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento  Personalizado</h2>
+									<DividerLine width="62px" height="3px" color="white" />
+									<h1 style={{fontWeight: 700, textJustify:"inter-character", marginTop: "8px"}}> COMPRE SEM SAIR DE CASA </h1>
+									<p style={{paddingTop: "8px", fontSize: "18px" }}>Confira&ensp;nossos&ensp;modelos&ensp;disponíveis,&ensp;compre&ensp;e&ensp;receba&ensp;no&ensp;conforto&ensp;da&ensp;sua&ensp;casa&ensp;óculos&ensp;das&ensp;melhores&ensp;e&ensp;mais&ensp;renomadas&ensp;marcas&ensp;do&ensp;mundo.</p>
+								</div>
+							</Banner>
 			,
-
-			cards: [
-				{
-					marca: "Carolina Herrera",
-					modelo: "HER0186 82UM2",
-					logo: logos.CH,
-					preco: 2214,
-					img: "HER0186-S_82UM2_1.png"
-				},
-				{
-					marca: "Prada",
-					modelo: "SPRA014 18Q",
-					logo: logos.Prada,
-					preco: 3495,
-					img: "SPRA01_14O-50B_1.png"
-				},
-				{
-					marca: "Fendi",
-					modelo: "FE50072I 050",
-					logo: logos.Fendi,
-					preco: 3122,
-					img: "fe500721_050_1.png"
-				},
-				{
-					marca: "Fendi",
-					modelo: "FE50065I 001",
-					logo: logos.Fendi,
-					img: "fe500651_001_1.png",
-					preco: 3657,
-				}
-			]
 		},
 		{
 			titulo: "Mãe Esportiva",
 			bgCategoria: "#F4F4F4",
 			imagemCatergoria: "Moderna.png",
 			banner: "",
-			// cardStyle: cardsEstilos.comBordas,
-			// btnBg: paleta.colorido,
-			// btnFg: paleta.escrita,
-			// frameColor: paleta.colorido,
-
-
+			cards: [],
 			cardStyle: cardsEstilos.semBordas,
 			btnFg: paleta.escrita,
 			btnBg: paleta.branco,
 			frameColor: paleta.branco,
-			banner: "",
-
-			cards: [
-				{
-					marca: "Carrera",
-					modelo: "CARDUCUC017/S",
-					logo: logos.Carrera,
-					img: "CARDUC017S_OITUZ_1.png",
-					preco: 1135
-				},
-				{
-					marca: "Carrera",
-					modelo: "FLAGLAB 16KY21V",
-					logo: logos.Carrera,
-					img: "FLAGLAB16_KY21V_1.png",
-					preco: 1237
-				},
-				{
-					marca: "Carrera",
-					modelo: "1061/S10AHA59",
-					logo: logos.Carrera,
-					img: "1061S_10AHA_1.jpg",
-					preco: 1330
-				},
-				{
-					marca: "Swarovski",
-					modelo: "SK6014 103655",
-					logo: logos.Swarovski,
-					preco: 2385,
-					img: "SK6014_103655_1.png"
-				}
-			]
 		},
 		{
 			titulo: "Mãe Elegante",
@@ -244,63 +126,57 @@ function App() {
 			btnBg: paleta.branco,
 			frameColor: paleta.branco,
 			banner: "",
-			cards: [
-				{
-					marca: "VERSACE",
-					modelo: "MOD1292 1507",
-					logo: logos.Versace,
-					preco: 1637,
-					img: "MOD1292_1507_1.png"
-				},
-				{
-					marca: "Tom Ford",
-					modelo: "TF1089 01P",
-					logo: logos.TomFord,
-					preco: 3190,
-					img: "TF1089_01P_1.png"
-				},
-				{
-					marca: "Carolina Herrera",
-					modelo: "HER0224FWM",
-					logo: logos.CH,
-					preco: 1811,
-					img: "HER0224_FWM_1.png"
-				},
-			]
+			cards: []
 		},
 	])
 
 	useEffect(() => {
-	// let counter = []
-	// let total = 0
-	// for (let i = 0; i < categoriesData.length;i++) {
-	// 	counter.push(categoriesData[i].titulo + ": " + String(categoriesData[i].cards.length))
-	// 	total += categoriesData[i].cards.length
-	// }
-	// counter.push("Total: " + String(total))
-	// console.log(counter)
 		let tempCategoriesData = categoriesData
+		let idCounter = 0
 		tempCategoriesData.forEach(i => {
-			 i.cards = i.cards.sort((a,b) => a["preco"] > b["preco"])
-		setCategoriesData(tempCategoriesData)
+			cardsData[i.titulo] = cardsData[i.titulo].sort((a, b) => a.preco >= b.preco)
+			cardsData[i.titulo] = cardsData[i.titulo].map(e => {
+				idCounter += 1
+				return {...e, id: idCounter}
+			})
+			i.cards = cardsData[i.titulo]
 		})
-	}, [])
+		console.log(tempCategoriesData)
+		setCategoriesData(tempCategoriesData)
+},[categoriesData])
 
 
 
   return (
     <div className="App">
 		<Header
-			btnStyle={{...estilosBotao.bannerBtn}}
-			headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
+			btnStyle={{...estilosBotao.bannerBtn, marginTop:"8px", marginBottom:"8px"}}
+			// headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
+			headerStyle={{height: size[0] < size[1] ? "350px" :"620px"}}
+			imgStyle={{width: size[0] < size[1] ?  "95%" : "100%"}}
 			mensagem={"Conheça nosssos produtos."}
 			btnTexto="COMPRE AGORA"
+			icone={true}
+			iconeSize = "24px"
+		/>
+		<BrandsCarousel 
+				brands={[
+					"carrera.png",
+					"swarovski.png",
+					"Fendi.png",
+					"PRADA.png",
+					"carolina herrera.png",
+					"burberry.png",
+					"TOM FORD.png",
+				]}		
+				imgWidth = {size[0] < size[1] ? "64px" : "96px"}
+			containerSize = {size[0] < size[1] ? "100%" : "41%"}
+		translation = {size[0] < size[1] ? -875 : -817}
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
 				btnStyle={{...estilosBotao.bannerBtn, width: size[0] < size[1] ? "120px" : "148px", height: size[0] < size[1] ? "20px" : "40px"}}
-				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}}
-				heightStyle={size[0] < size[1] ? "43vh" : "40vh"}
+				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}} heightStyle={size[0] < size[1] ? "280px" : "400px"}
 				size={size}
 		/>
 		{categoriesData.map((e) => (
@@ -320,6 +196,8 @@ function App() {
     </div>
   );
 }
+
+
 export default App;
 
 // <Banner 

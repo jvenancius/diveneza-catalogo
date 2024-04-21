@@ -18,8 +18,9 @@ function CategoriesBanner(props) {
 				centeredSlides={true}
 				spaceBetween={-120}
 				navigation={true}
-				modules={[Navigation, Pagination]}
+				modules={[Navigation]}
 				style={{height: props.heightStyle}}
+				className='categories--banner--swiper'
 			>
 				{props.categories.map(categoryId => {
 					return (

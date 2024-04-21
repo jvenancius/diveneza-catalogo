@@ -1,0 +1,14 @@
+.check--card h2 {
+	margin: 0;
+}
+
+
+.check--card p {
+	margin: 0;
+}
+
+.card--field {
+	border: 1px solid black;
+	margin:8px;
+	padding: 8px
+}

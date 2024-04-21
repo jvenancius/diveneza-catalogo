@@ -48,7 +48,7 @@ function App() {
 			// marginTop: "32px",
 			// width: size[0] < size[1] ? "120px":"200px",
 			width: "160px",
-			height: "30px",
+			height: "40px",
 			display: "inline-block",
 			borderRadius: "50px",
 			fontSize: size[0] < size[1] ? "80%" : "80%",

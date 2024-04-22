@@ -15,7 +15,7 @@ function Card(props) {
 		<div className="card" style={{...props.propsStyle, display:"flex", justifyContent:"space-between", height: "100%", borderRadius: "50px", overflow:"hidden", alignItems:"center", minHeight:"400px"}}>
 			<div className="card--image--div" style={{width:"100%",height:"100%", aspectRatio:"8/7", marginTop:"0", backgroundColor:props.frameColor, backgroundImage: "url(\"/assets/" + props.img + "\")", backgroundPosition:"center", backgroundSize:"contain", backgroundRepeat: "no-repeat", borderRadius:"50px"}}>
 			</div>
-			<img src="./assets/frame_shadow.png" zIndex="-1" style={{position:"absolute", bottom:"30.5%", width:"85%"}}></img>
+			<img src="./assets/frame_shadow.png" style={{position:"absolute", bottom:"30.5%", width:"85%"}}></img>
 			<div className="card--description" style={{width:"100%"}}>
 				<h2 style={{marginTop:"2%"}}>{props.marca}</h2>
 				<h3 className="card--desciption--price">{"10x " + precoFormatado}</h3>

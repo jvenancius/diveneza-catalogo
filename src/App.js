@@ -52,7 +52,7 @@ function App() {
 			// width: "100%",
 			// height: "40px",
 			borderRadius: "50px",
-			fontSize: size[0] < size[1] ? size[0]/42 + "px" : size[1]/55 + "px",
+			fontSize: size[0] < size[1] ? size[0]/42 + "px" : Math.min(size[0]/110, 32) + "px",
 			aspectRatio: size[0] < size[1] ? "4/1" : "5/1",
 			width: size[0] < size[1] ? "100%" : "15%",
 			// flexShrink: "0",
@@ -157,14 +157,14 @@ function App() {
   return (
     <div className="App">
 		<Header
-				btnStyle={{...estilosBotao.bannerBtn, marginTop: "8px", marginBottom: "8px"}}
+				btnStyle={{...estilosBotao.bannerBtn, marginTop: "8px", marginBottom: "8px", fontSize: size[0] <= size[1] ? estilosBotao.bannerBtn.fontSize : Math.min(size[0] / 110,16) + "px"}}
 				// headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
-				headerStyle={{height: size[0] < size[1] ? "80%" : "620px", display:"flex", alignItems:"center"}}
+				headerStyle={{height: size[0] < size[1] ? "80%" : "620px", display:"flex", alignItems:"center", paddingBottom: size[0] < size[1] ? "16px" : "32px"}}
 				imgStyle={{width: size[0] < size[1] ? "95%" : "100%"}}
 				mensagem={"Conheça nosssos produtos."}
 				btnTexto="COMPRE AGORA"
 				icone={true}
-				iconeSize={size[0] < size[1] ? size[0] / 25 + "px" : size[1] / 52 + "px"}
+				iconeSize={size[0] < size[1] ? size[0] / 25 + "px" : Math.min(size[0] / 72,32) + "px"}
 				btnSize= {size[0] < size[1] ? "30%" : "80%"}
 		/>
 		<BrandsCarousel 
@@ -183,9 +183,10 @@ function App() {
 		/>
 		<CategoriesBanner 
 				categories={categoriesData}
-				btnStyle={{...estilosBotao.bannerBtn, width: size[0] < size[1] ? "120px" : "148px"}}
-				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}} heightStyle={size[0] < size[1] ? "280px" : "400px"}
+				btnStyle={{...estilosBotao.bannerBtn, fontSize: "12px", width: size[0] < size[1] ? "120px" : "148px"}}
+				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}}
 				size={size}
+			heightStyle={size[0] < size[1] ? size[0] > 720 ? "280px" : "400px" : "400px"}
 		/>
 		{categoriesData.map((e) => (
 			<Category

@@ -13,10 +13,11 @@ function BrandsCarousel(props) {
 
 	const [goingBack, setGoingBack] = useState(false)
 	const time = 30000
+	const [startValue, setStartValue] = useState(0)
 
 	let slideStyle = {
 		// translate: `${(goingBack ? -8000 * -1 : -6000) * offset}%`,
-		translate: `${goingBack ? -100 : 100}%`,
+		translate: `${goingBack ? -startValue : startValue}%`,
 		// translate: "-831%",
 		// translate: "-0%",
 		// translate: "-0%",
@@ -51,16 +52,17 @@ function BrandsCarousel(props) {
 		//
 		//
 			setTimeout(() => setGoingBack(!goingBack), time)
+			setStartValue(100)
 			// setStop(0)
 		// } else {
 			// setStop(stop + 1)
 			// setGoingBack(!goingBack)
 	}, [goingBack])
   return (
-		<div style={{display:"flex", justifyContent:"center"}}>
-		<div style={{width:props.containerSize, display: "flex", justifyContent:"space-evenly", marginTop:"32px", marginBottom:"32px", columnGap:"12px", ...slideStyle}}>
+		<div style={{display:"flex", justifyContent:"center", overflow:"hidden"}}>
+		<div style={{width:props.containerSize, display: "flex", justifyContent:"space-evenly", marginTop:"32px", marginBottom:"32px", columnGap:"12px", ...slideStyle, overflow:"hidden"}}>
 		{props.brands.map(brand => (
-			<img key={"brand--" + brand + "1"} style={{width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
+			<img key={"brand--" + brand + "1"} style={{overflow:"hidden", width: props.imgWidth}} src={"./assets/logos/" + brand} alt={brand.replace(/\.[^/.]+$/, "")}/>
 		))}
 </div>
 </div>

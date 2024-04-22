@@ -113,7 +113,7 @@ function App() {
 		{
 			titulo: "Mãe Esportiva",
 			bgCategoria: "#F4F4F4",
-			imagemCatergoria: "Moderna.png",
+			imagemCatergoria: "Esportiva.png",
 			banner: "",
 			cards: [],
 			cardStyle: cardsEstilos.semBordas,

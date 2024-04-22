@@ -10,84 +10,83 @@ import { Navigation } from "swiper/modules";
 import React, { useLayoutEffect, useState } from "react";
 
 function Version(props) {
-  const [size, setSize] = useState([0, 0]);
-  useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
+	const [size, setSize] = useState([0, 0]);
+	useLayoutEffect(() => {
+		function updateSize() {
+			setSize([window.innerWidth, window.innerHeight]);
+		}
+		window.addEventListener("resize", updateSize);
+		updateSize();
+		return () => window.removeEventListener("resize", updateSize);
+	}, []);
 
-  if (size[0] < size[1]) {
-    return (
-      <Swiper
-        slidesPerView={1}
-				spaceBetween={10}
-        loop={true}
-        navigation={true}
-        modules={[Navigation]}
-				style={{height:"100%", minHeight:"460px"}}
-      >
-        {props.cards.map((e) => (
-          <SwiperSlide
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-						className="card--slide"
+	if (size[0] < size[1]) {
+			return (
+				<Swiper
+					slidesPerView={1}
+					spaceBetween={10}
+					loop={true}
+					navigation={true}
+					modules={[Navigation]}
+					style={{height: "100%", minHeight: "460px"}}
+				>
+					{props.cards.map((e) => (
+						<SwiperSlide
+							style={{
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+							className="card--slide"
 							key={e.marca + e.modelo + "--slider"}
-          >
-            <Card
+						>
+							<Card
+								propsStyle={{...props.cardStyle}}
+								frameColor={props.frameColor}
+								marca={e.marca}
+								modelo={e.modelo}
+								preco={e.preco}
+								img={e.img}
+								btnStyle={props.btnStyle}
+								btnMensagemPrefixo={props.btnMensagemPrefixo}
+								id={e.id}
+								key={e.marca + e.modelo}
+								iconeSize={props.iconeSize}
+							/>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			);
+		}
+		return (
+			<div style={{display: "flex", marginBottom: "64px"}}>
+				<div
+					style={{
+						display: "grid",
+						gridTemplateColumns: "1fr 1fr 1fr",
+						gridGap: "2%"
+					}}
+				>
+					{props.cards.map((e) => (
+						<Card
 							propsStyle={{...props.cardStyle}}
-              frameColor={props.frameColor}
-              marca={e.marca}
-              modelo={e.modelo}
-              preco={e.preco}
-              img={e.img}
-              btnStyle={props.btnStyle}
-              btnMensagemPrefixo={props.btnMensagemPrefixo}
+							logo={e.logo}
+							frameColor={props.frameColor}
+							marca={e.marca}
+							modelo={e.modelo}
+							preco={e.preco}
 							id={e.id}
+							img={e.img}
+							btnStyle={props.btnStyle}
+							btnMensagemPrefixo={props.btnMensagemPrefixo}
 							key={e.marca + e.modelo}
 							iconeSize={props.iconeSize}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    );
-  }
-  return (
-    <div style={{ display: "flex", marginBottom: "64px"}}>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
-          margin: "auto",
-						gridGap: "50px"
-        }}
-      >
-        {props.cards.map((e) => (
-          <Card
-            propsStyle={{ ...props.cardStyle }}
-            logo={e.logo}
-            frameColor={props.frameColor}
-            marca={e.marca}
-            modelo={e.modelo}
-            preco={e.preco}
-						id={e.id}
-            img={e.img}
-            btnStyle={props.btnStyle}
-            btnMensagemPrefixo={props.btnMensagemPrefixo}
-						key={e.marca + e.modelo}
-							iconeSize={props.iconeSize}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
+						/>
+					))}
+				</div>
+			</div>
+		);
+	}
 
 function Category(props) {
 	if (!props.cards) return <></>

@@ -6,6 +6,7 @@ body {
 	background-color: #F4F4F4;
 	height: 100vh;
 	width: 100vw;
+	min-width: fit-content;
 }
 
 .App {
@@ -13,6 +14,13 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	background-color: #F4F4F4;
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	width: 100%;
+	height: 100%;
 }
 
 Button {

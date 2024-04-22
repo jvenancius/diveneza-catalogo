@@ -3,7 +3,7 @@ import WppButton from '../Buttons/wppBtn'
 
 function Header(props) {
   return (
-		<div className="header" style={{...props.headerStyle, width:"100vw"}}>
+		<div className="header" style={{...props.headerStyle, width:"100%"}}>
 			<img loading="lazy" src="./assets/CONHEÇA O CATÁLOGO DE DIA DAS MÃES.png" alt="" style={props.imgStyle}/>
 			<WppButton
 				icone={props.icone}

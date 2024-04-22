@@ -39,7 +39,7 @@ function App() {
 		{
 			border: "none",
 			backgroundColor: paleta.colorido,
-			aspectRatio: size[0] < size[1] ? "7/9" : "6/9" 
+			aspectRatio: size[0] < size[1] ? "7/9" : "6/9" ,
 		}
 	}
 
@@ -186,27 +186,35 @@ function App() {
 				btnStyle={{...estilosBotao.bannerBtn, fontSize: "12px", width: size[0] < size[1] ? "120px" : "148px"}}
 				titleStyle={{fontSize: size[0] < size[1] ? "24px" : "32px"}}
 				size={size}
-			heightStyle={size[0] < size[1] ? size[0] > 720 ? "280px" : "400px" : "400px"}
+				heightStyle={size[0] < size[1] ? size[0] > 720 ? "280px" : "400px" : "400px"}
 		/>
-		{categoriesData.map((e) => (
-			<Category
-				bg={e.bgCategoria}
-				iconeSize={size[0] < size[1] ? Math.min(size[0] / 16, 32) + "px" : size[0] / 94 + "px"}
-				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg, WebkitTextFillColor: e.btnFg}}
-				btnTexto="COMPRE AGORA"
-				btnMensagemPrefixo="Olá! Quero ver mais fotos do "
-				titulo={e.titulo.toUpperCase()}
-				cardStyle={e.cardStyle}
-				cards={e.cards}
-				banner={e.banner}
-				frameColor={e.frameColor}
-				key={"categoria--" + e.titulo}
-			/>
-		))}
 		<Footer/>
     </div>
   );
 }
+
+
+
+
+
+		// {categoriesData.map((e) => (
+		// 	<Category
+		// 		bg={e.bgCategoria}
+		// 		iconeSize={size[0] < size[1] ? Math.min(size[0] / 16, 32) + "px" : size[0] / 94 + "px"}
+		// 		btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg, WebkitTextFillColor: e.btnFg}}
+		// 		btnTexto="COMPRE AGORA"
+		// 		btnMensagemPrefixo="Olá! Quero ver mais fotos do "
+		// 		titulo={e.titulo.toUpperCase()}
+		// 		cardStyle={e.cardStyle}
+		// 		cards={e.cards}
+		// 		banner={e.banner}
+		// 		frameColor={e.frameColor}
+		// 		key={"categoria--" + e.titulo}
+		// 	/>
+		// ))}
+
+
+
 
 
 export default App;

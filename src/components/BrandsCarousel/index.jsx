@@ -46,9 +46,7 @@ function BrandsCarousel(props) {
 		// 		setReallyNot(false)
 		// 	}
 		// }
-		// console.log(goingBack)
 		// if (stop === 2) {
-			// console.log("stop")
 		//
 		//
 			setTimeout(() => setGoingBack(!goingBack), time)

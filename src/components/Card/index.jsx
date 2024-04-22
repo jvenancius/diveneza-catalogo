@@ -3,6 +3,34 @@ import WppBtn from '../Buttons/wppBtn';
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from 'swiper/modules';
+
+
+function ImgCarousel(props) {
+	if (typeof props.img !== "string") {
+		return (
+			<Swiper 
+				autoplay={{delay:props.delay, disableOnInteraction: false}}
+				loop={true}
+				modules={[Autoplay]}
+				style={{width:"100%", height:"100%", backgroundColor:"white", borderRadius:"50px"}}>
+				{props.img.map(i => {
+					return (
+						<SwiperSlide key={"slideImgCard--" + props.img}>
+							<div key={"imgCollection--" + props.img} className="card--image--div" style={{width: "100%", height: "100%", aspectRatio: "8/7", marginTop: "0", backgroundColor: props.frameColor, backgroundImage: "url(\"/assets/" + i + "\")", backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat", borderRadius: "50px"}}></div>
+						</SwiperSlide>
+					)
+				})}
+			</Swiper>
+		)
+	} else {
+		return <div className="card--image--div" style={{width:"100%",height:"100%", aspectRatio:"8/7", marginTop:"0", backgroundColor:props.frameColor, backgroundImage: "url(\"/assets/" + props.img + "\")", backgroundPosition:"center", backgroundSize:"contain", backgroundRepeat: "no-repeat", borderRadius:"50px"}}></div>
+	}
+}
+
+
 function Card(props) {
 	let formater = new Intl.NumberFormat('pt-BR', {
 		style: "currency",
@@ -11,10 +39,10 @@ function Card(props) {
 		maximumFractionDigits: 2,
 	})
 	let precoFormatado = formater.format(props.preco/10)
+
   return (
 		<div className="card" style={{...props.propsStyle, display:"flex", justifyContent:"space-between", borderRadius: "50px", overflow:"hidden", alignItems:"center"}}>
-			<div className="card--image--div" style={{width:"100%",height:"100%", aspectRatio:"8/7", marginTop:"0", backgroundColor:props.frameColor, backgroundImage: "url(\"/assets/" + props.img + "\")", backgroundPosition:"center", backgroundSize:"contain", backgroundRepeat: "no-repeat", borderRadius:"50px"}}>
-			</div>
+			<ImgCarousel img={props.img} frameColor={props.frameColor} delay={props.delay} />
 			<img src="./assets/frame_shadow.png" style={{width:"75%", minWidth:"0"}}></img>
 			<div className="card--description" style={{width:"100%"}}>
 				<h2 style={{marginTop:"2%"}}>{props.marca}</h2>

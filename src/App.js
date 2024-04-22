@@ -203,6 +203,7 @@ function App() {
 				banner={e.banner}
 				frameColor={e.frameColor}
 				key={"categoria--" + e.titulo}
+				delay={1000}
 			/>
 		))}
 		<Footer/>

@@ -52,6 +52,7 @@ function Version(props) {
 							id={e.id}
 							key={e.marca + e.modelo}
 							iconeSize={props.iconeSize}
+							delay={props.delay}
             />
           </SwiperSlide>
         ))}
@@ -78,11 +79,12 @@ function Version(props) {
             modelo={e.modelo}
             preco={e.preco}
 						id={e.id}
-            img={e.img}
+						img={e.img}
             btnStyle={props.btnStyle}
             btnMensagemPrefixo={props.btnMensagemPrefixo}
 						key={e.marca + e.modelo}
 						iconeSize={props.iconeSize}
+						delay={props.delay}
           />
         ))}
       </div>

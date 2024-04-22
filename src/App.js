@@ -161,7 +161,7 @@ function App() {
 				btnStyle={{...estilosBotao.bannerBtn, marginTop: "8px", marginBottom: "8px", fontSize: size[0] < size[1] ?size[0]/40 + "px" : size[0] > (minWidth + 350) ? Math.min(size[0] / 110,16) + "px" : size[0]/80 + "px"}}
 				// headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
 				headerStyle={{height: size[0] < size[1] ? "80%" : "720px", display:"flex", alignItems:"center", paddingBottom: size[0] < size[1] ? "16px" : "32px", justifyContent:"center", alignContent:"center"}}
-				imgStyle={{width: size[0] < size[1] ? "95%" : "100%"}}
+				imgStyle={{width: size[0] < size[1] ? "95%" : "100%", marginBottom:"1%"}}
 				mensagem={"Conheça nosssos produtos."}
 				btnTexto="COMPRE AGORA"
 				icone={true}

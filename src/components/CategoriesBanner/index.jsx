@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 function CategoriesBanner(props) {
-	if (props.size[0] < props.size[1] && props.size[0] < 720) {
+	if (props.size[0] < props.size[1] && props.size[0] < 820) {
 		return (
 			<Swiper
 				slidesPerView={1}
@@ -62,7 +62,7 @@ function CategoriesBanner(props) {
 				{props.categories.map(categoryId => {
 					return (
 							<div key={categoryId.titulo} style={{backgroundImage: "url(./assets/categorias/" + categoryId.imagemCatergoria + ")", backgroundRepeat: "no-repeat", width: "20%", aspectRatio:"4/5", flexGrow:"0", backgroundSize: "contain", backgroundPosition: "center", display: "flex", justifyContent: "center"}}>
-								<div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+								<div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%",...props.descriptionStyle }}>
 									<div style={{marginTop: "auto", marginBottom: "30%"}}>
 
 								<div style={{display: "flex", flexDirection: "column", justifyContent: "center", height: "100%" }}>

@@ -192,6 +192,7 @@ function App() {
 		{categoriesData.map((e) => (
 			<Category
 				categoryStyle={ size[0] < minWidth ? {marginRight:"5%", marginLeft:"5%"} : {marginLeft:"auto", marginRight:"auto"}}
+				gridStyle={{gridTemplateColumns: size[0] < 860 ? "1fr 1fr" : "1fr 1fr 1fr"}}
 				bg={e.bgCategoria}
 				iconeSize={size[0] < size[1] ? Math.min(size[0] / 16, 32) + "px" : size[0] < minWidth ? size[0] / 45 + "px" : "32px"}
 				btnStyle={{...estilosBotao.produtoBtn, backgroundColor: e.btnBg, color: e.btnFg, WebkitTextFillColor: e.btnFg}}

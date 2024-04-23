@@ -20,7 +20,7 @@ function Version(props) {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  if (size[0] < size[1]) {
+  if (size[0] < size[1] || size[0] < 620) {
     return (
       <Swiper
         slidesPerView={1}
@@ -67,7 +67,8 @@ function Version(props) {
           gridTemplateColumns: "1fr 1fr 1fr",
           margin: "auto",
 					...props.categoryStyle,
-					gridGap: "50px"
+					gridGap: "50px",
+					...props.gridStyle
         }}
       >
         {props.cards.map((e) => (

@@ -2,6 +2,8 @@ import './App.css';
 import Category from './components/Category'
 import Header from './components/Header'
 import Banner from './components/Banner'
+import Banner1 from './components/Banner/Banner1'
+import Banner2 from './components/Banner/Banner2'
 import Footer from './components/Footer'
 import ScrolltoBtn from './components/Buttons/ScrollToBtn'
 import CategoriesBanner from './components/CategoriesBanner';
@@ -22,6 +24,7 @@ function App() {
 		updateSize();
 		return () => window.removeEventListener("resize", updateSize);
 	}, []);
+
 	const paleta = {
 		colorido: "#ead8ca",
 		branco: "#FFFFFF",
@@ -96,19 +99,7 @@ function App() {
 			btnFg: paleta.escrita,
 			btnBg: paleta.branco,
 			frameColor: paleta.branco,
-			banner: <Banner 
-								bannerStyle={{height: "570px", backgroundPosition: "right", backgroundColor:"#bcafac"}}
-								bannerImg="./assets/capa site - compre online.png"
-								contentWidth="100%"					
-							>
-								<div className="banner--content--inside" style={{width: "300px"}}>
-									<h2 style={{fontSize:"20px", fontWeight: "700", marginBottom: "8px"}}>Atendimento  Personalizado</h2>
-									<DividerLine width="62px" height="3px" color="white" />
-									<h1 style={{fontWeight: 700, textJustify:"inter-character", marginTop: "8px"}}> COMPRE SEM SAIR DE CASA </h1>
-									<p style={{paddingTop: "8px", fontSize: "18px" }}>Confira&ensp;nossos&ensp;modelos&ensp;disponíveis,&ensp;compre&ensp;e&ensp;receba&ensp;no&ensp;conforto&ensp;da&ensp;sua&ensp;casa&ensp;óculos&ensp;das&ensp;melhores&ensp;e&ensp;mais&ensp;renomadas&ensp;marcas&ensp;do&ensp;mundo.</p>
-								</div>
-							</Banner>
-			,
+			banner: <Banner1/>,
 		},
 		{
 			titulo: "Mãe Esportiva",
@@ -129,7 +120,7 @@ function App() {
 			btnFg: paleta.escrita,
 			btnBg: paleta.branco,
 			frameColor: paleta.branco,
-			banner: "",
+			banner: <Banner2/>,
 			cards: []
 		},
 	])
@@ -158,14 +149,14 @@ function App() {
   return (
     <div className="App">
 		<Header
-				btnStyle={{...estilosBotao.bannerBtn, marginTop: "8px", marginBottom: "8px", fontSize: size[0] < size[1] ?size[0]/40 + "px" : size[0] > (minWidth + 350) ? Math.min(size[0] / 110,16) + "px" : size[0]/80 + "px"}}
-				// headerStyle={{height: size[0] < size[1] ? "55vh" :"60vh"}}
-				headerStyle={{height: size[0] < size[1] ? "80%" : "720px", display:"flex", alignItems:"center", paddingBottom: size[0] < size[1] ? "16px" : "32px", justifyContent:"center", alignContent:"center"}}
-				imgStyle={{width: size[0] < size[1] ? "95%" : "100%", marginBottom:"1%"}}
+				btnStyle={{...estilosBotao.bannerBtn, width: size[0] > 850 ? size[0] < 1200 ? "70%" : "50%" : size[0] < 380 ? "100%" : size[0] / 5 + "px", marginTop: size[0] > 850 ? "16px" : "0", fontSize: size[0] > 1070 ? "16px" : size[0] > 1010 ? size[0] < 1200 ? size[0] / 70 + "px": size[0] / 60 + "px" : size[0] <= 380 ? size[0] / 50 + "px" :  size[0] / 60 + "px"}}
+				headerStyle={{height: size[0] < 1300 ? "50vw" : "772px", display:"flex", alignItems:"center", justifyContent:"center", alignContent:"center", backgroundImage: size[0] < 1500 ? "url(\"./assets/capa_mobile.png\")" : "url(\"./assets/capa.png\")"}}
+				logoStyle={size[0] > 1850 ? {position:"relative", left:"1050px", width: "400px"} : size[0] < 1300 ? size[0] > 1000 ? {marginLeft:"50%", marginRight:"auto", width:"25vw" } : size[0] <= 630 ? {marginLeft:"45%", marginRight:"auto", width:"25vw" } : {marginLeft:"48%", marginRight:"auto", width:"25vw" }: {marginLeft:"auto", marginRight:"1%", marginTop:"0", marginBottom:"5%", width:"400px" }}
+				promoStyle={size[0] > 1850 ? {marginBottom:"10%"} : size[0] < 1500 ? size[0] > 1200 ? {marginBottom:"18%", marginLeft:"0", height:"160px"} : {marginBottom:"auto", marginLeft:"0", height:"12vw"} : {marginBottom:"12%", marginLeft:"0", height:"200px"}}
 				mensagem={"Conheça nosssos produtos."}
 				btnTexto="COMPRE AGORA"
 				icone={true}
-				iconeSize={size[0] < size[1] ? "180%" : size[0] > (minWidth + 350) ? Math.min(size[0] / 72,32) + "px" : "24px"}
+				iconeSize={size[0] > 1070 ? "24px" : size[0] > 1010 ? size[0] < 1200 ? size[0] / 45 + "px" : size[0] / 40 + "px" : size[0] <= 380 ? size[0] / 30 + "px" :  size[0] / 40 + "px"}
 		/>
 		<BrandsCarousel 
 				brands={[

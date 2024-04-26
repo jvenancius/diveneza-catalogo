@@ -34,8 +34,8 @@
 				},
 				{
 					"marca": "Prada",
-					"modelo": "SPRA014 18Q",
-					"preco": 3495,
+					"modelo": "SPRA01 140-50B",
+					"preco": 2973,
 					"img": "SPRA01_14O-50B_1.png"
 				},
 				{
@@ -54,7 +54,7 @@
 			"Mãe Esportiva": [
 				{
 					"marca": "Carrera",
-					"modelo": "CARDUCUC017/S",
+					"modelo": "CARDUC017/S OITUZ",
 					"img": "CARDUC017S_OITUZ_1.png",
 					"preco": 1135
 				},
@@ -80,7 +80,7 @@
 			"Mãe Elegante": [
 				{
 					"marca": "VERSACE",
-					"modelo": "MOD1292 1507",
+					"modelo": "1292 1507",
 					"preco": 1637,
 					"img": "MOD1292_1507_1.png"
 				},
@@ -92,7 +92,7 @@
 				},
 				{
 					"marca": "Carolina Herrera",
-					"modelo": "HER0224FWM",
+					"modelo": "HER0224 FWM",
 					"preco": 1811,
 					"img": "HER0224_FWM_1.png"
 				}

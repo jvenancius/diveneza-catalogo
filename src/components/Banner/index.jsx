@@ -7,7 +7,7 @@ function Banner(props) {
 		}
   return (
 		<div loading="lazy" className="banner" style={{...styleImage, ...props.bannerStyle, marginTop: "64px"}} >
-		<div className="banner--content" style={{width:props.contentWidth}}>
+		<div className="banner--content" style={{width:props.contentWidth, display:"flex", margin:0}}>
 		{props.children}
 			</div>
 </div>
